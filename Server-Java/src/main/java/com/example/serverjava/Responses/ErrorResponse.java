@@ -1,4 +1,4 @@
-package com.example.serverjava.Entity;
+package com.example.serverjava.Responses;
 
 
 import lombok.AllArgsConstructor;

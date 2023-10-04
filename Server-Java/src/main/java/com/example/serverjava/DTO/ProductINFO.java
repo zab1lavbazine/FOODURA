@@ -1,4 +1,4 @@
-package com.example.serverjava.Entity;
+package com.example.serverjava.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

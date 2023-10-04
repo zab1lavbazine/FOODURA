@@ -2,7 +2,7 @@ package com.example.serverjava.Controller;
 
 
 
-import com.example.serverjava.Entity.ErrorResponse;
+import com.example.serverjava.Responses.ErrorResponse;
 import com.example.serverjava.Entity.Product;
 import com.example.serverjava.Service.ProductService;
 
