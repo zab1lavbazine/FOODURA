@@ -39,8 +39,13 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable UUID id){
-        userService.deleteUserById(id);
-        return ResponseEntity.ok("User deleted");
+        boolean checkDelete = userService.deleteUserById(id);
+        if (checkDelete){
+            return ResponseEntity.ok("User deleted");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("User not found");
+        }
     }
 
     @GetMapping("/email/{email}")
