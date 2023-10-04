@@ -16,4 +16,9 @@ public class OrderINFO {
     private String notion;
     private UserINFO user;
     private List<ProductINFO> products;
+
+    public OrderINFO(UUID id, String notion) {
+        this.id = id;
+        this.notion = notion;
+    }
 }

@@ -22,13 +22,11 @@ import java.util.UUID;
 @RequestMapping("/api/user")
 public class UserController {
 
-    @Autowired
     private final UserService userService;
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
 
 
-    @GetMapping("/all")
+
+    @GetMapping
     public ResponseEntity<?> getAllUsers() throws IOException {
         List<User> users = userService.getAllUsers();
         if (users != null){
@@ -39,24 +37,36 @@ public class UserController {
         }
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable UUID id){
+        userService.deleteUserById(id);
+        return ResponseEntity.ok("User deleted");
+    }
+
     @GetMapping("/email/{email}")
     public ResponseEntity<?> getUserByEmail(@PathVariable String email){
-        Optional<User> user = userService.getByEmail(email);
-        if (user.isPresent()){
+        User user = userService.getUserByEmail(email);
+        if (user!= null) {
             return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("User with email ${email} is not found");
+                    .body("User not found");
         }
     }
 
     @GetMapping("/{id}")
-    public User findById(@PathVariable UUID id){
-        Optional<User> user = userService.getById(id);
-        return user.orElse(null);
+    public ResponseEntity<?> findById(@PathVariable UUID id){
+        User user = userService.getUserById(id);
+        if (user != null){
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("User not found");
+        }
+
     }
 
-    @PostMapping("/add")
+    @PostMapping
     public ResponseEntity<String> addNewUser (@RequestBody User user){
        boolean check = userService.saveNewUser(user);
        if (!check) {
@@ -67,7 +77,7 @@ public class UserController {
        }
     }
 
-    @PostMapping ("/admin/add")
+    @PostMapping ("/admin")
     public ResponseEntity<?> addNewAdmin(@RequestBody User user){
         boolean check = userService.saveNewAdmin(user);
         if (!check){
@@ -81,14 +91,14 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody UserLoginData userLoginData){
-        Optional<User> user = userService.getByEmail(userLoginData.getEmail());
+        User user = userService.getUserByEmail(userLoginData.getEmail());
         String password = userLoginData.getPassword();
-        if (user.isPresent()){
-            User user1 = user.get();
-            if (passwordEncoder.matches(password, user1.getPassword())){
-                return ResponseEntity.ok(user1);
+        if (user != null){
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            if (passwordEncoder.matches(password, user.getPassword())){
+                return ResponseEntity.ok(user);
             } else {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                return ResponseEntity.status(HttpStatus.CONFLICT)
                         .body(null);
             }
         } else {
@@ -99,21 +109,15 @@ public class UserController {
 
 
 
-    @PostMapping("/edit/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<String> editUser(@RequestBody User user, @PathVariable UUID id){
-        Optional<User> oldUser = userService.getById(id);
-
-        if (oldUser.isEmpty()){
+        boolean checkEdit = userService.editUser(user, id);
+        if (!checkEdit){
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("User not found");
+        } else {
+            return ResponseEntity.ok("User is updated");
         }
-        User newUser = oldUser.get();
-        newUser.setEmail(user.getEmail());
-        newUser.setUsername(user.getUsername());
-        newUser.setPhoneNumber(user.getPhoneNumber());
-
-        userService.saveNewUser(newUser);
-        return ResponseEntity.ok("Edit user: ${id}");
     }
 
 

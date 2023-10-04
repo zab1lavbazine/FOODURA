@@ -17,4 +17,13 @@ public class OrderWithProductsRequest {
     private UUID userId;
     private List<UUID> productIds = new ArrayList<>();
 
+    public List<Product> getProducts() {
+        List<Product> products = new ArrayList<>();
+        for (UUID id : productIds) {
+            Product product = new Product();
+            product.setId(id);
+            products.add(product);
+        }
+        return products;
+    }
 }

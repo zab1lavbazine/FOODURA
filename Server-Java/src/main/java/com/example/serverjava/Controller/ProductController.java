@@ -2,12 +2,14 @@ package com.example.serverjava.Controller;
 
 
 
+import com.example.serverjava.Facade.OrderFacade;
+import com.example.serverjava.Facade.ProductFacade;
 import com.example.serverjava.Responses.ErrorResponse;
 import com.example.serverjava.Entity.Product;
 import com.example.serverjava.Service.ProductService;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,56 +24,61 @@ import java.util.UUID;
 @RequestMapping("/api/product")
 public class ProductController {
 
-    @Autowired
+
     private final ProductService productService;
 
-    @GetMapping("/all")
-    public ResponseEntity<?> getAllProducts () throws IOException{
-        List<Product> products = productService.getAllProducts();
+    private final ProductFacade productFacade;
 
-        if (products != null){
-            return ResponseEntity.ok(products);
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(new ErrorResponse("not found"));
+    @GetMapping
+    public ResponseEntity<?> getAllProducts (){
+
+        try {
+            List<Product> products = productService.getAllProducts();
+            if (products != null){
+                return ResponseEntity.ok(products);
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(new ErrorResponse("not found"));
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new ErrorResponse("Error"));
         }
+
     }
 
-    @PostMapping("/add")
+    @PostMapping
     public ResponseEntity<String> addNewProduct (@RequestBody Product product){
         productService.addProduct(product);
         return ResponseEntity.ok("New product added");
     }
 
     @GetMapping("/{id}")
-    public Product findById(@PathVariable String id) throws IOException{
-        UUID findId = UUID.fromString(id);
-       Optional<Product> product ;
-        product = productService.findById(findId);
-        return product.orElse(null);
+    public ResponseEntity<?> findById(@PathVariable UUID id) throws IOException{
+        return ResponseEntity.ok(productService.getProductById(id));
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable UUID id){
-        productService.deleteById(id);
-    }
-
-
-    @PostMapping("/edit/{id}")
-    public ResponseEntity<?> editProduct(@RequestBody Product product, @PathVariable UUID id){
-        Optional<Product> productToChange = productService.findById(id);
-
-        if (productToChange.isEmpty()){
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable UUID id){
+        boolean checkDelete = productFacade.deleteProductById(id);
+        if (checkDelete){
+            return ResponseEntity.ok("product deleted");
+        } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Not found");
+                    .body("product not found");
         }
-        Product updatedProduct = productToChange.get();
-        updatedProduct.setName(product.getName());
-        updatedProduct.setDescription(product.getDescription());
-        updatedProduct.setPrice(product.getPrice());
+    }
 
-        productService.addProduct(updatedProduct);
 
-        return ResponseEntity.ok("product has been changed");
+    @PutMapping("/{id}")
+    public ResponseEntity<?> editProduct(@RequestBody Product product, @PathVariable UUID id){
+        boolean checkUpdate = productService.editProduct( id, product);
+      if (checkUpdate){
+          return ResponseEntity.ok("product edited");
+      } else {
+          return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                  .body("product not found");
+      }
     }
 }

@@ -1,6 +1,7 @@
 package com.example.serverjava.Service;
 
 
+import com.example.serverjava.DTO.ProductINFO;
 import com.example.serverjava.Entity.Order;
 import com.example.serverjava.Entity.Product;
 import com.example.serverjava.Repository.OrderRepository;
@@ -19,44 +20,55 @@ import java.util.UUID;
 @Slf4j
 @RequiredArgsConstructor
 public class ProductService {
-    @Autowired
-    private final ProductRepository productRepository;
-    @Autowired
-    private final OrderRepository orderRepository;
 
-    @Autowired
-    private final OrderCleanUpService orderCleanUpService;
+    private final ProductRepository productRepository;
+
+
 
     public List<Product> getAllProducts ()  {
+        log.info("getting all products");
         return productRepository.findAll();
     }
 
     public void addProduct (Product product){
-        productRepository.save(product);
         log.info("adding new product : id {}", product.getId());
+        productRepository.save(product);
     }
 
-    public Optional<Product> findById(UUID id ){
-        return productRepository.findById(id);
+    public Product getProductById(UUID id ){
+        log.info("getting product with id {}", id);
+        return productRepository.findById(id).orElse(null);
     }
 
 
-    @Transactional
-    public void deleteById(UUID id){
-        Optional<Product> productOptional = productRepository.findById(id);
-        if (productOptional.isPresent()){
-            Product product = productOptional.get();
 
-           List<Order> orders = orderRepository.findByProductsContaining(product);
-            for (Order order : orders){
-                order.getProducts().remove(product);
-            }
-            orderCleanUpService.deletOrdersWithoutProducts();
-            orderRepository.saveAll(orders);
-            productRepository.deleteById(id);
-        } else {
-            log.info("product with id {} is not found", id);
-        }
+    public List<ProductINFO> getAllProductsDTO(List<Product> products) throws IOException {
+        log.info("getting all products DTO");
+        return ProductINFO.from(products);
+    }
 
+
+    public List<Product> getAllProductsById(List<UUID> productsId) {
+        log.info("getting all products by id");
+        return productRepository.findAllById(productsId);
+    }
+
+    public boolean deleteById(UUID id) {
+        log.info("product with id {} is deleted", id);
+        return productRepository.findById(id).map(product -> {
+            productRepository.delete(product);
+            return true;
+        }).orElse(false);
+    }
+
+    public boolean editProduct(UUID id, Product product) {
+        log.info("product with id {} is edited", id);
+        Product oldProduct = productRepository.findById(id).orElse(null);
+        if (oldProduct == null) return false;
+        oldProduct.setName(product.getName());
+        oldProduct.setDescription(product.getDescription());
+        oldProduct.setPrice(product.getPrice());
+        productRepository.save(product);
+        return true;
     }
 }

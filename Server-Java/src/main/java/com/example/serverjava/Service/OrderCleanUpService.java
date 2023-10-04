@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class OrderCleanUpService {
-    @Autowired
+
     private final OrderRepository orderRepository;
 
     public void deletOrdersWithoutProducts(){
