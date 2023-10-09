@@ -1,8 +1,5 @@
 package com.example.serverjava.Controller;
 
-
-
-import com.example.serverjava.Facade.OrderFacade;
 import com.example.serverjava.Facade.ProductFacade;
 import com.example.serverjava.Responses.ErrorResponse;
 import com.example.serverjava.Entity.Product;
@@ -16,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
+
 import java.util.UUID;
 
 @RestController
@@ -24,23 +21,22 @@ import java.util.UUID;
 @RequestMapping("/api/product")
 public class ProductController {
 
-
     private final ProductService productService;
 
     private final ProductFacade productFacade;
 
     @GetMapping
-    public ResponseEntity<?> getAllProducts (){
+    public ResponseEntity<?> getAllProducts() {
 
         try {
             List<Product> products = productService.getAllProducts();
-            if (products != null){
+            if (products != null) {
                 return ResponseEntity.ok(products);
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
                         .body(new ErrorResponse("not found"));
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(new ErrorResponse("Error"));
@@ -49,20 +45,20 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<String> addNewProduct (@RequestBody Product product){
+    public ResponseEntity<String> addNewProduct(@RequestBody Product product) {
         productService.addProduct(product);
         return ResponseEntity.ok("New product added");
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable UUID id) throws IOException{
+    public ResponseEntity<?> findById(@PathVariable UUID id) throws IOException {
         return ResponseEntity.ok(productService.getProductById(id));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteById(@PathVariable UUID id){
+    public ResponseEntity<String> deleteById(@PathVariable UUID id) {
         boolean checkDelete = productFacade.deleteProductById(id);
-        if (checkDelete){
+        if (checkDelete) {
             return ResponseEntity.ok("product deleted");
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -70,15 +66,14 @@ public class ProductController {
         }
     }
 
-
     @PutMapping("/{id}")
-    public ResponseEntity<?> editProduct(@RequestBody Product product, @PathVariable UUID id){
-        boolean checkUpdate = productService.editProduct( id, product);
-      if (checkUpdate){
-          return ResponseEntity.ok("product edited");
-      } else {
-          return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                  .body("product not found");
-      }
+    public ResponseEntity<?> editProduct(@RequestBody Product product, @PathVariable UUID id) {
+        boolean checkUpdate = productService.editProduct(id, product);
+        if (checkUpdate) {
+            return ResponseEntity.ok("product edited");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("product not found");
+        }
     }
 }

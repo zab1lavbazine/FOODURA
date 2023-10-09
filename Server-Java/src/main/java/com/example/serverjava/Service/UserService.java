@@ -1,6 +1,7 @@
 package com.example.serverjava.Service;
 
 import com.example.serverjava.DTO.UserINFO;
+import com.example.serverjava.Entity.Order;
 import com.example.serverjava.Entity.Role;
 import com.example.serverjava.Entity.User;
 import com.example.serverjava.Repository.UserRepository;
@@ -43,6 +44,11 @@ public class UserService {
         userRepository.save(userFromDB);
         log.info("user is updated id : {}", user.getId());
         return true;
+    }
+
+    public void addOrder(User user, Order order){
+        user.getOrderList().add(order);
+        userRepository.save(user);
     }
 
 
@@ -93,4 +99,9 @@ public class UserService {
         return user.map(UserINFO::new).orElse(null);
     }
 
+    public void deleteOrderFromUser(Order order) {
+        User user = order.getUser();
+        user.getOrderList().remove(order);
+        userRepository.save(user);
+    }
 }

@@ -1,12 +1,9 @@
 package com.example.serverjava.Controller;
 
-
 import com.example.serverjava.Entity.User;
 import com.example.serverjava.Entity.UserLoginData;
 import com.example.serverjava.Service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -14,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -24,23 +20,21 @@ public class UserController {
 
     private final UserService userService;
 
-
-
     @GetMapping
     public ResponseEntity<?> getAllUsers() throws IOException {
         List<User> users = userService.getAllUsers();
-        if (users != null){
+        if (users != null) {
             return ResponseEntity.ok(users);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body ("list is empty");
+                    .body("list is empty");
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteById(@PathVariable UUID id){
+    public ResponseEntity<?> deleteById(@PathVariable UUID id) {
         boolean checkDelete = userService.deleteUserById(id);
-        if (checkDelete){
+        if (checkDelete) {
             return ResponseEntity.ok("User deleted");
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -49,9 +43,9 @@ public class UserController {
     }
 
     @GetMapping("/email/{email}")
-    public ResponseEntity<?> getUserByEmail(@PathVariable String email){
+    public ResponseEntity<?> getUserByEmail(@PathVariable String email) {
         User user = userService.getUserByEmail(email);
-        if (user!= null) {
+        if (user != null) {
             return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -60,32 +54,31 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable UUID id){
+    public ResponseEntity<?> getUserById(@PathVariable UUID id) {
         User user = userService.getUserById(id);
-        if (user != null){
+        if (user != null) {
             return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("User not found");
         }
-
     }
 
     @PostMapping
-    public ResponseEntity<String> addNewUser (@RequestBody User user){
-       boolean check = userService.saveNewUser(user);
-       if (!check) {
-           return ResponseEntity.status(HttpStatus.CONFLICT)
-                   .body("User with email ${user.getEmail()} is already exist");
-       } else {
-           return ResponseEntity.ok("New user is added");
-       }
+    public ResponseEntity<String> addNewUser(@RequestBody User user) {
+        boolean check = userService.saveNewUser(user);
+        if (!check) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("User with email ${user.getEmail()} is already exist");
+        } else {
+            return ResponseEntity.ok("New user is added");
+        }
     }
 
-    @PostMapping ("/admin")
-    public ResponseEntity<?> addNewAdmin(@RequestBody User user){
+    @PostMapping("/admin")
+    public ResponseEntity<?> addNewAdmin(@RequestBody User user) {
         boolean check = userService.saveNewAdmin(user);
-        if (!check){
+        if (!check) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("User with email ${user.getEmail()} is already exist");
         } else {
@@ -93,14 +86,13 @@ public class UserController {
         }
     }
 
-
     @PostMapping("/login")
-    public ResponseEntity<User> login(@RequestBody UserLoginData userLoginData){
+    public ResponseEntity<User> login(@RequestBody UserLoginData userLoginData) {
         User user = userService.getUserByEmail(userLoginData.getEmail());
         String password = userLoginData.getPassword();
-        if (user != null){
+        if (user != null) {
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            if (passwordEncoder.matches(password, user.getPassword())){
+            if (passwordEncoder.matches(password, user.getPassword())) {
                 return ResponseEntity.ok(user);
             } else {
                 return ResponseEntity.status(HttpStatus.CONFLICT)
@@ -112,18 +104,15 @@ public class UserController {
         }
     }
 
-
-
     @PutMapping("/{id}")
-    public ResponseEntity<String> editUser(@RequestBody User user, @PathVariable UUID id){
+    public ResponseEntity<String> editUser(@RequestBody User user, @PathVariable UUID id) {
         boolean checkEdit = userService.editUser(user, id);
-        if (!checkEdit){
+        if (!checkEdit) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("User not found");
         } else {
             return ResponseEntity.ok("User is updated");
         }
     }
-
 
 }

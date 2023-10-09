@@ -54,7 +54,7 @@ public class OrderController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById( @PathVariable UUID id){
-        orderService.deleteById(id);
+        orderFacade.deleteOrder(id);
         return ResponseEntity.ok("Order deleted");
     }
 

@@ -7,12 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table (name = "users")
@@ -49,6 +45,9 @@ public class User implements UserDetails {
     @Column (name = "phoneNumber")
     private String phoneNumber;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Order> orderList = new ArrayList<>();
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;
@@ -73,4 +72,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return active   ;
     }
+
 }

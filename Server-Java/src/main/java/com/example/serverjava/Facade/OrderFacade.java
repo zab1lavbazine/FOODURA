@@ -13,17 +13,14 @@ import com.example.serverjava.Service.ProductService;
 import com.example.serverjava.Service.UserService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
-@Slf4j
 @RequiredArgsConstructor
 public class OrderFacade {
     private final OrderService orderService;
@@ -36,6 +33,7 @@ public class OrderFacade {
         Order order = new Order();
         User user = userService.getUserById(request.getUserId());
         order.setUser(user);
+        userService.addOrder( order.getUser() ,order);
         List<Product> productList = productService.getAllProductsById(request.getProductIds());
         order.setProducts(productList);
         orderService.addNewOrder(order);
@@ -50,6 +48,16 @@ public class OrderFacade {
         orderService.updateOrder(order);
     }
 
+
+    public void deleteOrder(UUID id) {
+        Order order = orderService.getOrderById(id);
+        User user = order.getUser();
+        userService.deleteOrderFromUser(order);
+        order.setUser(null);
+        productService.deleteOrderFromProducts(order);
+        order.setProducts(null);
+        orderService.deleteById(id);
+    }
 
     public List<OrderINFO> getAllOrdersDTO() throws IOException {
         List<Order> orderList = orderService.getAllOrders();

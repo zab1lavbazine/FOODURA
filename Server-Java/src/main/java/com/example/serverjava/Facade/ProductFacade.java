@@ -5,18 +5,15 @@ import com.example.serverjava.Entity.Order;
 import com.example.serverjava.Entity.Product;
 import com.example.serverjava.Repository.OrderRepository;
 import com.example.serverjava.Service.OrderCleanUpService;
-import com.example.serverjava.Service.OrderService;
 import com.example.serverjava.Service.ProductService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
 @Service
-@Slf4j
 @RequiredArgsConstructor
 public class ProductFacade {
 
