@@ -5,6 +5,7 @@ import com.example.serverjava.Entity.Order;
 import com.example.serverjava.Entity.Product;
 import com.example.serverjava.Repository.OrderRepository;
 import com.example.serverjava.Service.OrderCleanUpService;
+import com.example.serverjava.Service.OrderService;
 import com.example.serverjava.Service.ProductService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -17,9 +18,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ProductFacade {
 
-    private final OrderRepository orderRepository;
-
-    private final OrderCleanUpService orderCleanUpService;
+    private final OrderFacade orderFacade;
 
     private final ProductService productService;
 
@@ -29,14 +28,7 @@ public class ProductFacade {
     public boolean deleteProductById(UUID id){
         Product product = productService.getProductById(id);
         if (product == null) return false;
-
-        List<Order> orders = orderRepository.findByProductsContaining(product);
-        for (Order order : orders){
-            order.getProducts().remove(product);
-        }
-        orderCleanUpService.deletOrdersWithoutProducts();
-        //check if there will be orders without products
-        orderRepository.saveAll(orders);
+        orderFacade.deleteOrderFromProducts(product);
         productService.deleteById(id);
         return true;
     }

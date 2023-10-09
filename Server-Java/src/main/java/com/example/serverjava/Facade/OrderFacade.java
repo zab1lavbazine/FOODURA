@@ -51,7 +51,6 @@ public class OrderFacade {
 
     public void deleteOrder(UUID id) {
         Order order = orderService.getOrderById(id);
-        User user = order.getUser();
         userService.deleteOrderFromUser(order);
         order.setUser(null);
         productService.deleteOrderFromProducts(order);
@@ -77,5 +76,17 @@ public class OrderFacade {
 
         }
         return orderDTOList;
+    }
+
+    public void deleteOrderFromProducts(Product product) {
+        List<Order> orderList = product.getOrders();
+        for (Order order : orderList) {
+            order.getProducts().remove(product);
+            if (order.getProducts().isEmpty()) {
+                deleteOrder(order.getId());
+            } else {
+                orderService.updateOrder(order);
+            }
+        }
     }
 }

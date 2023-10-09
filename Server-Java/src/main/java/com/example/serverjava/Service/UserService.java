@@ -104,4 +104,13 @@ public class UserService {
         user.getOrderList().remove(order);
         userRepository.save(user);
     }
+
+    public boolean saveNewUserFromDTO(UserINFO user) {
+        User newUser = new User();
+        newUser.setUsername(user.getUsername());
+        newUser.setEmail(user.getEmail());
+        newUser.setPhoneNumber(user.getPhoneNumber());
+        newUser.setPassword(user.getPassword());
+        return saveNewUser(newUser);
+    }
 }

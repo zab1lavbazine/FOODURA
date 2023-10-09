@@ -43,12 +43,12 @@ public class ProductService {
         return productRepository.findAllById(productsId);
     }
 
-    public boolean deleteById(UUID id) {
+    public void deleteById(UUID id) {
         log.info("product with id {} is deleted", id);
-        return productRepository.findById(id).map(product -> {
+        productRepository.findById(id).map(product -> {
             productRepository.delete(product);
-            return true;
-        }).orElse(false);
+            return null;
+        });
     }
 
     public boolean editProduct(UUID id, Product product) {

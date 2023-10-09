@@ -1,5 +1,6 @@
 package com.example.serverjava.Controller;
 
+import com.example.serverjava.DTO.UserINFO;
 import com.example.serverjava.Entity.User;
 import com.example.serverjava.Entity.UserLoginData;
 import com.example.serverjava.Service.UserService;
@@ -65,8 +66,8 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<String> addNewUser(@RequestBody User user) {
-        boolean check = userService.saveNewUser(user);
+    public ResponseEntity<String> addNewUser(@RequestBody UserINFO user) {
+        boolean check = userService.saveNewUserFromDTO(user);
         if (!check) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("User with email ${user.getEmail()} is already exist");
