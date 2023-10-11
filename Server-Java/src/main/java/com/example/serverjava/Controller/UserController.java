@@ -22,7 +22,18 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    public ResponseEntity<?> getAllUsers() throws IOException {
+    public ResponseEntity<?> getAllUsers() {
+        List<UserINFO> users = userService.getAllUsersDTO();
+        if (users != null) {
+            return ResponseEntity.ok(users);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("list is empty");
+        }
+    }
+
+    @GetMapping("/detailed")
+    public ResponseEntity<?> getAllUsersDetailed(){
         List<User> users = userService.getAllUsers();
         if (users != null) {
             return ResponseEntity.ok(users);
@@ -77,8 +88,8 @@ public class UserController {
     }
 
     @PostMapping("/admin")
-    public ResponseEntity<?> addNewAdmin(@RequestBody User user) {
-        boolean check = userService.saveNewAdmin(user);
+    public ResponseEntity<?> addNewAdmin(@RequestBody UserINFO user) {
+        boolean check = userService.saveNewAdminFromDTO(user);
         if (!check) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("User with email ${user.getEmail()} is already exist");

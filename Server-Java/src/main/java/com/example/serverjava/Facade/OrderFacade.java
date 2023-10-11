@@ -30,13 +30,31 @@ public class OrderFacade {
 
     @Transactional
     public void createNewOrder(OrderWithProductsRequest request) throws Exception {
-        Order order = new Order();
-        User user = userService.getUserById(request.getUserId());
-        order.setUser(user);
-        userService.addOrder( order.getUser() ,order);
+
+        // checking for existing order
+        Order existingOrder = checkForExistingOrderForUser(request.getUserId(), request.getProductIds());
+
+        // getting add products from request
         List<Product> productList = productService.getAllProductsById(request.getProductIds());
-        order.setProducts(productList);
-        orderService.addNewOrder(order);
+
+        if (existingOrder != null) {
+            existingOrder.getProducts().addAll(productList);
+            orderService.updateOrder(existingOrder);
+            return;
+        } else {
+            Order order = new Order();
+            order.setNotion(request.getNotion());
+            User user = userService.getUserById(request.getUserId());
+            order.setUser(user);
+            order.setProducts(productList);
+            userService.addOrder(order.getUser(), order);
+            orderService.addNewOrder(order);
+        }
+    }
+
+
+    private Order checkForExistingOrderForUser(UUID userId, List<UUID> productsId) {
+        return orderService.getOrderByUserId(userId);
     }
 
     public void editOrder(UUID id, OrderWithProductsRequest request) {
@@ -63,7 +81,7 @@ public class OrderFacade {
         List<OrderINFO> orderDTOList = new ArrayList<>();
 
 
-        for (Order order : orderList){
+        for (Order order : orderList) {
             OrderINFO orderDTO = new OrderINFO(order.getId(), order.getNotion());
 
             UserINFO userDTO = userService.getUserDTO(order.getUser().getId());

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Service    
+@Service
 @RequiredArgsConstructor
 @Slf4j
 public class OrderService {
@@ -31,11 +31,10 @@ public class OrderService {
         orderRepository.save(order);
     }
 
-    public void deleteById(UUID id){
+    public void deleteById(UUID id) {
         log.info("Deleting order with id {}", id);
         orderRepository.deleteById(id);
     }
-
 
 
     public List<Order> getAllOrders() {
@@ -49,4 +48,16 @@ public class OrderService {
         return order.orElse(null);
     }
 
+    public Order getOrderByUserId(UUID userId) {
+        log.info("Getting order with user id {} from the database", userId);
+        Optional<Order> order = orderRepository.getOrderByUserId(userId);
+        return order.orElse(null);
+    }
+
+    public void deleteProductByIdFromOrder(UUID productId, UUID orderId) {
+        log.info("Deleting product with id {} from order {}", productId, orderId);
+        Order order = getOrderById(orderId);
+        order.getProducts().removeIf(product -> product.getId().equals(productId));
+        updateOrder(order);
+    }
 }

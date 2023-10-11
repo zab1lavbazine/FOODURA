@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -24,5 +25,9 @@ public class UserINFO {
         this.username = user.getUsername();
         this.email = user.getEmail();
         this.phoneNumber = user.getPhoneNumber();
+    }
+
+    public static List<UserINFO> from(List<User> userList) {
+        return userList.stream().map(UserINFO::new).toList();
     }
 }

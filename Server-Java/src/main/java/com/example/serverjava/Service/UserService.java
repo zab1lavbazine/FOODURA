@@ -18,22 +18,25 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @Slf4j
 public class UserService {
-
-
     private final UserRepository userRepository;
-
-
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
-    public User getUserById (UUID id){
+
+    public List<UserINFO> getAllUsersDTO() {
+        log.info("Getting all users from the database");
+        List<User> userList = userRepository.findAll();
+        return UserINFO.from(userList);
+    }
+
+    public User getUserById(UUID id) {
         log.info("Find user with id: {}", id);
         return userRepository.findById(id).orElse(null);
     }
 
-    public boolean editUser(User user, UUID id){
+    public boolean editUser(User user, UUID id) {
         User userFromDB = getUserById(id);
         if (userFromDB == null) return false;
         userFromDB.setUsername(user.getUsername());
@@ -46,13 +49,13 @@ public class UserService {
         return true;
     }
 
-    public void addOrder(User user, Order order){
+    public void addOrder(User user, Order order) {
         user.getOrderList().add(order);
         userRepository.save(user);
     }
 
 
-    public boolean deleteUserById(UUID id){
+    public boolean deleteUserById(UUID id) {
         User user = getUserById(id);
         if (user == null) return false;
         userRepository.delete(user);
@@ -60,7 +63,7 @@ public class UserService {
         return true;
     }
 
-    public boolean saveNewUser(User user){
+    public boolean saveNewUser(User user) {
         String email = user.getEmail();
         //check if user with this email already exists
         if (userRepository.findByEmail(email).isPresent()) return false;
@@ -112,5 +115,14 @@ public class UserService {
         newUser.setPhoneNumber(user.getPhoneNumber());
         newUser.setPassword(user.getPassword());
         return saveNewUser(newUser);
+    }
+
+    public boolean saveNewAdminFromDTO(UserINFO user) {
+        User newAdmin = new User();
+        newAdmin.setUsername(user.getUsername());
+        newAdmin.setEmail(user.getEmail());
+        newAdmin.setPhoneNumber(user.getPhoneNumber());
+        newAdmin.setPassword(user.getPassword());
+        return saveNewAdmin(newAdmin);
     }
 }

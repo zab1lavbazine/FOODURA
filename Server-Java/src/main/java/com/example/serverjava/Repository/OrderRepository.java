@@ -23,4 +23,6 @@ public interface OrderRepository extends JpaRepository<Order, UUID> {
     @Query("delete from Order o where o.products is empty")
     void deleteEmptyOrders();
 
+    Optional<Order> getOrderByUserId(UUID userId);
+
 }

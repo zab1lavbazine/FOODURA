@@ -1,7 +1,6 @@
 package com.example.serverjava.Controller;
 
 
-
 import com.example.serverjava.Entity.Order;
 import com.example.serverjava.DTO.OrderINFO;
 import com.example.serverjava.Entity.OrderWithProductsRequest;
@@ -26,11 +25,11 @@ public class OrderController {
 
 
     @GetMapping
-    public ResponseEntity<List<OrderINFO>> getAllOrders(){
+    public ResponseEntity<List<OrderINFO>> getAllOrders() {
         try {
             List<OrderINFO> orderINFO = orderFacade.getAllOrdersDTO();
             return ResponseEntity.ok(orderINFO);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(null);
@@ -39,29 +38,34 @@ public class OrderController {
 
 
     @PostMapping
-    public ResponseEntity<String> addNewOrder( @RequestBody OrderWithProductsRequest request){
+    public ResponseEntity<String> addNewOrder(@RequestBody OrderWithProductsRequest request) {
         try {
             orderFacade.createNewOrder(request);
-            return ResponseEntity.ok ("New order is added");
-        } catch (Exception e ){
+            return ResponseEntity.ok("New order is added");
+        } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error creating user");
         }
     }
 
+    @DeleteMapping("/product/{productId}/order/{orderId}")
+    public ResponseEntity<String> deleteProductByIdFromOrder(@PathVariable UUID productId, @PathVariable UUID orderId) {
+        orderService.deleteProductByIdFromOrder(productId, orderId);
+        return ResponseEntity.ok("Product deleted from order");
+    }
 
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteById( @PathVariable UUID id){
+    public ResponseEntity<?> deleteById(@PathVariable UUID id) {
         orderFacade.deleteOrder(id);
         return ResponseEntity.ok("Order deleted");
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getOrderById(@PathVariable UUID id){
+    public ResponseEntity<?> getOrderById(@PathVariable UUID id) {
         Order order = orderService.getOrderById(id);
-        if (order != null){
+        if (order != null) {
             return ResponseEntity.ok(order);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -70,7 +74,7 @@ public class OrderController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editOrder(@PathVariable UUID id, @RequestBody OrderWithProductsRequest request){
+    public ResponseEntity<String> editOrder(@PathVariable UUID id, @RequestBody OrderWithProductsRequest request) {
         orderFacade.editOrder(id, request);
         return ResponseEntity.ok("Notion of the product have been changed");
     }
