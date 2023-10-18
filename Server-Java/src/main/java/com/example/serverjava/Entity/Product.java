@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table (name = "products")
+@Table(name = "products")
 
 
 @Data
@@ -20,18 +20,18 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Product {
     @Id
-    @Column (name = "id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
-    @Column (name = "name")
+    @Column(name = "name")
     private String name;
 
     @Column(name = "description")
     private String description;
 
 
-    @Column (name = "price")
+    @Column(name = "price")
     private Integer price;
 
     @ManyToMany(mappedBy = "products")

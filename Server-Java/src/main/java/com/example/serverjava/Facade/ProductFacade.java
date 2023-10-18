@@ -23,9 +23,8 @@ public class ProductFacade {
     private final ProductService productService;
 
 
-
     @Transactional
-    public boolean deleteProductById(UUID id){
+    public boolean deleteProductById(Long id) {
         Product product = productService.getProductById(id);
         if (product == null) return false;
         orderFacade.deleteOrderFromProducts(product);

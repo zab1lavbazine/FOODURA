@@ -53,11 +53,11 @@ public class OrderFacade {
     }
 
 
-    private Order checkForExistingOrderForUser(UUID userId, List<UUID> productsId) {
+    private Order checkForExistingOrderForUser(Long userId, List<Long> productsId) {
         return orderService.getOrderByUserId(userId);
     }
 
-    public void editOrder(UUID id, OrderWithProductsRequest request) {
+    public void editOrder(Long id, OrderWithProductsRequest request) {
         Order order = orderService.getOrderById(id);
         User user = userService.getUserById(request.getUserId());
         order.setUser(user);
@@ -67,7 +67,7 @@ public class OrderFacade {
     }
 
 
-    public void deleteOrder(UUID id) {
+    public void deleteOrder(Long id) {
         Order order = orderService.getOrderById(id);
         userService.deleteOrderFromUser(order);
         order.setUser(null);

@@ -31,12 +31,12 @@ public class UserService {
         return UserINFO.from(userList);
     }
 
-    public User getUserById(UUID id) {
+    public User getUserById(Long id) {
         log.info("Find user with id: {}", id);
         return userRepository.findById(id).orElse(null);
     }
 
-    public boolean editUser(User user, UUID id) {
+    public boolean editUser(User user, Long id) {
         User userFromDB = getUserById(id);
         if (userFromDB == null) return false;
         userFromDB.setUsername(user.getUsername());
@@ -55,7 +55,7 @@ public class UserService {
     }
 
 
-    public boolean deleteUserById(UUID id) {
+    public boolean deleteUserById(Long id) {
         User user = getUserById(id);
         if (user == null) return false;
         userRepository.delete(user);
@@ -97,7 +97,7 @@ public class UserService {
         return true;
     }
 
-    public UserINFO getUserDTO(UUID id) {
+    public UserINFO getUserDTO(Long id) {
         Optional<User> user = Optional.ofNullable(getUserById(id));
         return user.map(UserINFO::new).orElse(null);
     }

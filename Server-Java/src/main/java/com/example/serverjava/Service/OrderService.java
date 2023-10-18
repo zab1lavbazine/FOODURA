@@ -31,7 +31,7 @@ public class OrderService {
         orderRepository.save(order);
     }
 
-    public void deleteById(UUID id) {
+    public void deleteById(Long id) {
         log.info("Deleting order with id {}", id);
         orderRepository.deleteById(id);
     }
@@ -42,19 +42,19 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Order getOrderById(UUID id) {
+    public Order getOrderById(Long id) {
         log.info("Getting order with id {} from the database", id);
         Optional<Order> order = orderRepository.getOrderById(id);
         return order.orElse(null);
     }
 
-    public Order getOrderByUserId(UUID userId) {
+    public Order getOrderByUserId(Long userId) {
         log.info("Getting order with user id {} from the database", userId);
         Optional<Order> order = orderRepository.getOrderByUserId(userId);
         return order.orElse(null);
     }
 
-    public void deleteProductByIdFromOrder(UUID productId, UUID orderId) {
+    public void deleteProductByIdFromOrder(Long productId, Long orderId) {
         log.info("Deleting product with id {} from order {}", productId, orderId);
         Order order = getOrderById(orderId);
         order.getProducts().removeIf(product -> product.getId().equals(productId));

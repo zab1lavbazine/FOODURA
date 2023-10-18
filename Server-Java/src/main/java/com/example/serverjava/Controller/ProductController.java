@@ -51,12 +51,12 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable UUID id) throws IOException {
+    public ResponseEntity<?> findById(@PathVariable Long id) throws IOException {
         return ResponseEntity.ok(productService.getProductById(id));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteById(@PathVariable UUID id) {
+    public ResponseEntity<String> deleteById(@PathVariable Long id) {
         boolean checkDelete = productFacade.deleteProductById(id);
         if (checkDelete) {
             return ResponseEntity.ok("product deleted");
@@ -67,7 +67,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> editProduct(@RequestBody Product product, @PathVariable UUID id) {
+    public ResponseEntity<?> editProduct(@RequestBody Product product, @PathVariable Long id) {
         boolean checkUpdate = productService.editProduct(id, product);
         if (checkUpdate) {
             return ResponseEntity.ok("product edited");

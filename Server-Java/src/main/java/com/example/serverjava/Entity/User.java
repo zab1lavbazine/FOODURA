@@ -11,38 +11,38 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.*;
 
 @Entity
-@Table (name = "users")
+@Table(name = "users")
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class User implements UserDetails {
     @Id
-    @Column (name = "id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
     @Column(name = "username")
     private String username;
 
-    @Column (name = "password", length = 1000)
+    @Column(name = "password", length = 1000)
     private String password;
 
-    @Column (name = "active")
+    @Column(name = "active")
     private Boolean active;
 
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role",
-    joinColumns =
-        @JoinColumn(name = "user_id"))
+            joinColumns =
+            @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
 
-    @Column (name = "email", unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
-    @Column (name = "phoneNumber")
+    @Column(name = "phoneNumber")
     private String phoneNumber;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -70,7 +70,7 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return active   ;
+        return active;
     }
 
 }

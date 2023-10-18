@@ -47,7 +47,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteById(@PathVariable UUID id) {
+    public ResponseEntity<?> deleteById(@PathVariable Long id) {
         boolean checkDelete = userFacade.deleteUserById(id);
         if (checkDelete) {
             return ResponseEntity.ok("User deleted");
@@ -69,7 +69,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable UUID id) {
+    public ResponseEntity<?> getUserById(@PathVariable Long id) {
         User user = userService.getUserById(id);
         if (user != null) {
             return ResponseEntity.ok(user);
@@ -120,7 +120,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editUser(@RequestBody User user, @PathVariable UUID id) {
+    public ResponseEntity<String> editUser(@RequestBody User user, @PathVariable Long id) {
         boolean checkEdit = userService.editUser(user, id);
         if (!checkEdit) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)

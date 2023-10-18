@@ -13,8 +13,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface OrderRepository extends JpaRepository<Order, UUID> {
-    public Optional<Order> getOrderById(UUID id);
+public interface OrderRepository extends JpaRepository<Order, Long> {
+    public Optional<Order> getOrderById(Long id);
 
     public List<Order> findByProductsContaining(Product product);
 
@@ -23,6 +23,6 @@ public interface OrderRepository extends JpaRepository<Order, UUID> {
     @Query("delete from Order o where o.products is empty")
     void deleteEmptyOrders();
 
-    Optional<Order> getOrderByUserId(UUID userId);
+    Optional<Order> getOrderByUserId(Long userId);
 
 }

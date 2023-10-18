@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductINFO {
-    private UUID id;
+    private long id;
     private String name;
     private String description;
     private Integer price;

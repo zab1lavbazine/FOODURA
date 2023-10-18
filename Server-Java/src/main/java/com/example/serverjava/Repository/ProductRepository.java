@@ -9,7 +9,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, UUID> {
-    public Optional<Product> findById(UUID id);
-    public List<Product> findAllById(UUID id);
+public interface ProductRepository extends JpaRepository<Product, Long> {
+    public Optional<Product> findById(Long id);
+
+    public List<Product> findAllById(Long id);
 }

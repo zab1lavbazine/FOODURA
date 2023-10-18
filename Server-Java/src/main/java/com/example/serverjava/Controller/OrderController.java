@@ -50,20 +50,20 @@ public class OrderController {
     }
 
     @DeleteMapping("/product/{productId}/order/{orderId}")
-    public ResponseEntity<String> deleteProductByIdFromOrder(@PathVariable UUID productId, @PathVariable UUID orderId) {
+    public ResponseEntity<String> deleteProductByIdFromOrder(@PathVariable Long productId, @PathVariable Long orderId) {
         orderService.deleteProductByIdFromOrder(productId, orderId);
         return ResponseEntity.ok("Product deleted from order");
     }
 
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteById(@PathVariable UUID id) {
+    public ResponseEntity<?> deleteById(@PathVariable Long id) {
         orderFacade.deleteOrder(id);
         return ResponseEntity.ok("Order deleted");
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getOrderById(@PathVariable UUID id) {
+    public ResponseEntity<?> getOrderById(@PathVariable Long id) {
         Order order = orderService.getOrderById(id);
         if (order != null) {
             return ResponseEntity.ok(order);
@@ -74,7 +74,7 @@ public class OrderController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editOrder(@PathVariable UUID id, @RequestBody OrderWithProductsRequest request) {
+    public ResponseEntity<String> editOrder(@PathVariable Long id, @RequestBody OrderWithProductsRequest request) {
         orderFacade.editOrder(id, request);
         return ResponseEntity.ok("Notion of the product have been changed");
     }

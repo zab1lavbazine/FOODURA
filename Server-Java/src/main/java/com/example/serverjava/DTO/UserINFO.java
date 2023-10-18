@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserINFO {
-    private UUID id;
+    private long id;
     private String username;
     private String email;
     private String phoneNumber;

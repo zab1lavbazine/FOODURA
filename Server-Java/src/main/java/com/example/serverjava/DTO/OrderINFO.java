@@ -12,12 +12,12 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderINFO {
-    private UUID id;
+    private long id;
     private String notion;
     private UserINFO user;
     private List<ProductINFO> products;
 
-    public OrderINFO(UUID id, String notion) {
+    public OrderINFO(long id, String notion) {
         this.id = id;
         this.notion = notion;
     }

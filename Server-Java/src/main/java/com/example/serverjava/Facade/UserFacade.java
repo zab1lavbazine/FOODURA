@@ -19,7 +19,7 @@ public class UserFacade {
     private final OrderService orderService;
 
 
-    public boolean deleteUserById(UUID id) {
+    public boolean deleteUserById(Long id) {
         User user = userService.getUserById(id);
         if (user == null) return false;
         orderService.deleteOrderByUser(user);

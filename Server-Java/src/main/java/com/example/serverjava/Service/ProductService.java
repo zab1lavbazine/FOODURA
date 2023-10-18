@@ -7,6 +7,7 @@ import com.example.serverjava.Repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
@@ -28,7 +29,7 @@ public class ProductService {
         productRepository.save(product);
     }
 
-    public Product getProductById(UUID id) {
+    public Product getProductById(Long id) {
         log.info("getting product with id {}", id);
         return productRepository.findById(id).orElse(null);
     }
@@ -38,12 +39,12 @@ public class ProductService {
         return ProductINFO.from(products);
     }
 
-    public List<Product> getAllProductsById(List<UUID> productsId) {
+    public List<Product> getAllProductsById(List<Long> productsId) {
         log.info("getting all products by id");
         return productRepository.findAllById(productsId);
     }
 
-    public void deleteById(UUID id) {
+    public void deleteById(Long id) {
         log.info("product with id {} is deleted", id);
         productRepository.findById(id).map(product -> {
             productRepository.delete(product);
@@ -51,7 +52,7 @@ public class ProductService {
         });
     }
 
-    public boolean editProduct(UUID id, Product product) {
+    public boolean editProduct(Long id, Product product) {
         log.info("product with id {} is edited", id);
         Product oldProduct = productRepository.findById(id).orElse(null);
         if (oldProduct == null)

@@ -14,6 +14,6 @@ import java.util.UUID;
 @NoArgsConstructor
 public class OrderWithProductsRequest {
     private String notion;
-    private UUID userId;
-    private List<UUID> productIds = new ArrayList<>();
+    private Long userId;
+    private List<Long> productIds = new ArrayList<>();
 }
