@@ -60,4 +60,15 @@ public class OrderService {
         order.getProducts().removeIf(product -> product.getId().equals(productId));
         updateOrder(order);
     }
+
+    public void deleteOrderByUser(User user) {
+        log.info("Deleting order with user {}", user.getId());
+        Order order = getOrderByUserId(user.getId());
+        if (order == null) return;
+
+        //make orders products null
+        order.setProducts(null);
+        updateOrder(order);
+        orderRepository.delete(order);
+    }
 }

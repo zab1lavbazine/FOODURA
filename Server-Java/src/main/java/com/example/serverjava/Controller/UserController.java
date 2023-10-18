@@ -3,6 +3,7 @@ package com.example.serverjava.Controller;
 import com.example.serverjava.DTO.UserINFO;
 import com.example.serverjava.Entity.User;
 import com.example.serverjava.Entity.UserLoginData;
+import com.example.serverjava.Facade.UserFacade;
 import com.example.serverjava.Service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,8 @@ public class UserController {
 
     private final UserService userService;
 
+    private final UserFacade userFacade;
+
     @GetMapping
     public ResponseEntity<?> getAllUsers() {
         List<UserINFO> users = userService.getAllUsersDTO();
@@ -33,7 +36,7 @@ public class UserController {
     }
 
     @GetMapping("/detailed")
-    public ResponseEntity<?> getAllUsersDetailed(){
+    public ResponseEntity<?> getAllUsersDetailed() {
         List<User> users = userService.getAllUsers();
         if (users != null) {
             return ResponseEntity.ok(users);
@@ -45,7 +48,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable UUID id) {
-        boolean checkDelete = userService.deleteUserById(id);
+        boolean checkDelete = userFacade.deleteUserById(id);
         if (checkDelete) {
             return ResponseEntity.ok("User deleted");
         } else {
