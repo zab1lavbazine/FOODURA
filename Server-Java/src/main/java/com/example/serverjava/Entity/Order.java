@@ -25,6 +25,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+
     @Column(name = "notion")
     private String notion;
 
