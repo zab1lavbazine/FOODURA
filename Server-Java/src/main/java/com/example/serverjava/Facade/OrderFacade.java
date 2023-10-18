@@ -4,10 +4,7 @@ package com.example.serverjava.Facade;
 import com.example.serverjava.DTO.OrderINFO;
 import com.example.serverjava.DTO.ProductINFO;
 import com.example.serverjava.DTO.UserINFO;
-import com.example.serverjava.Entity.Order;
-import com.example.serverjava.Entity.OrderWithProductsRequest;
-import com.example.serverjava.Entity.Product;
-import com.example.serverjava.Entity.User;
+import com.example.serverjava.Entity.*;
 import com.example.serverjava.Service.OrderService;
 import com.example.serverjava.Service.ProductService;
 import com.example.serverjava.Service.UserService;
@@ -40,12 +37,12 @@ public class OrderFacade {
         if (existingOrder != null) {
             existingOrder.getProducts().addAll(productList);
             orderService.updateOrder(existingOrder);
-            return;
         } else {
             Order order = new Order();
             order.setNotion(request.getNotion());
             User user = userService.getUserById(request.getUserId());
             order.setUser(user);
+            order.getStatuses().add(Status.PROCESSING);
             order.setProducts(productList);
             userService.addOrder(order.getUser(), order);
             orderService.addNewOrder(order);
@@ -83,7 +80,7 @@ public class OrderFacade {
 
         for (Order order : orderList) {
             OrderINFO orderDTO = new OrderINFO(order.getId(), order.getNotion());
-
+            orderDTO.setStatuses(new ArrayList<>(order.getStatuses()));
             UserINFO userDTO = userService.getUserDTO(order.getUser().getId());
             orderDTO.setUser(userDTO);
 

@@ -28,6 +28,7 @@ public class OrderService {
 
     public void updateOrder(Order order) {
         log.info("Updating order {} to the database", order.getId());
+        order.getStatuses().add(Status.UPDATED);
         orderRepository.save(order);
     }
 

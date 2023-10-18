@@ -8,9 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "orders")
@@ -28,6 +26,13 @@ public class Order {
 
     @Column(name = "notion")
     private String notion;
+
+    @ElementCollection(targetClass = Status.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "order_status",
+            joinColumns =
+            @JoinColumn(name = "order_id"))
+    @Enumerated(EnumType.STRING)
+    private Set<Status> statuses = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "user_id")
