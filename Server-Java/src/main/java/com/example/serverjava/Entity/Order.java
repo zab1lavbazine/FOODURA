@@ -1,5 +1,6 @@
 package com.example.serverjava.Entity;
 
+import com.example.serverjava.Entity.Enum.Status;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;

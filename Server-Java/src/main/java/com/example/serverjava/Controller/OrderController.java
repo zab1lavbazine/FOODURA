@@ -3,7 +3,7 @@ package com.example.serverjava.Controller;
 
 import com.example.serverjava.Entity.Order;
 import com.example.serverjava.DTO.OrderINFO;
-import com.example.serverjava.Entity.OrderWithProductsRequest;
+import com.example.serverjava.Entity.SupportEntity.OrderWithProductsRequest;
 import com.example.serverjava.Facade.OrderFacade;
 import com.example.serverjava.Service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor

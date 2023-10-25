@@ -1,14 +1,14 @@
-version: '3.7'
-services:
-    postgres: 
-        image: postgres:15
-        restart: always
-        environment:
-            - POSTGRES_USER=bareldan
-            - POSTGRES_PASSWORD=qwer
-            - POSTGRES_DB=bareldan
-        ports:
-            - '5432:5432'
-        volumes:
-            - .docker/postgres-data:/var/lib/postgresql/data
+version: '3.8'
 
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      - POSTGRES_USER=bareldan
+      - POSTGRES_PASSWORD=qwer
+      - POSTGRES_DB=bareldan
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./.docker/postgres-data:/var/lib/postgresql/data

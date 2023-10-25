@@ -2,7 +2,7 @@ package com.example.serverjava.Controller;
 
 import com.example.serverjava.DTO.UserINFO;
 import com.example.serverjava.Entity.User;
-import com.example.serverjava.Entity.UserLoginData;
+import com.example.serverjava.Entity.SupportEntity.UserLoginData;
 import com.example.serverjava.Facade.UserFacade;
 import com.example.serverjava.Service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -11,9 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor

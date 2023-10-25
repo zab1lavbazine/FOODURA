@@ -1,6 +1,7 @@
 package com.example.serverjava.Entity;
 
 
+import com.example.serverjava.Entity.Enum.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

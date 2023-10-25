@@ -1,6 +1,7 @@
 package com.example.serverjava.Service;
 
 import com.example.serverjava.Entity.*;
+import com.example.serverjava.Entity.Enum.Status;
 import com.example.serverjava.Repository.OrderRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor

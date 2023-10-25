@@ -2,7 +2,7 @@ package com.example.serverjava.Service;
 
 import com.example.serverjava.DTO.UserINFO;
 import com.example.serverjava.Entity.Order;
-import com.example.serverjava.Entity.Role;
+import com.example.serverjava.Entity.Enum.Role;
 import com.example.serverjava.Entity.User;
 import com.example.serverjava.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor

@@ -1,4 +1,4 @@
-package com.example.serverjava.Entity;
+package com.example.serverjava.Entity.Enum;
 
 import org.springframework.security.core.GrantedAuthority;
 
