@@ -5,9 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 import java.util.List;
 import java.util.UUID;
+
+import javax.management.relation.Role;
 
 @Data
 @AllArgsConstructor
@@ -18,7 +19,6 @@ public class UserINFO {
     private String email;
     private String phoneNumber;
     private String password;
-
 
     public UserINFO(User user) {
         this.id = user.getId();

@@ -48,6 +48,14 @@ public class UserService {
         return true;
     }
 
+
+
+    public List<User> getAllAdmins(){
+        Optional<List<User>> admins = userRepository.findAllAdmins();
+        //check if optional is not null
+        if ()
+    }
+
     public void addOrder(User user, Order order) {
         user.getOrderList().add(order);
         userRepository.save(user);

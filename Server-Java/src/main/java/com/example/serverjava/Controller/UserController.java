@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.ResponseCache;
 import java.util.List;
 
 @RestController
@@ -96,6 +97,17 @@ public class UserController {
                     .body("User with email ${user.getEmail()} is already exist");
         } else {
             return ResponseEntity.ok("New admin is added");
+        }
+    }
+
+    @GetMapping("/admin")
+    public ResponseEntity<?> getAllAdmins(){
+        List<User> admins = userService.getAllAdmins();
+        if (admin.empty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+            .body("No admins");
+        } else {
+            return ResponseEntity.ok(admin);
         }
     }
 
