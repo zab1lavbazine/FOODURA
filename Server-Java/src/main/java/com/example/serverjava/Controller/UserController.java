@@ -101,14 +101,9 @@ public class UserController {
     }
 
     @GetMapping("/admin")
-    public ResponseEntity<?> getAllAdmins(){
+    public ResponseEntity<?> getAllAdmins() {
         List<User> admins = userService.getAllAdmins();
-        if (admin.empty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-            .body("No admins");
-        } else {
-            return ResponseEntity.ok(admin);
-        }
+        return ResponseEntity.ok(admins);
     }
 
     @PostMapping("/login")

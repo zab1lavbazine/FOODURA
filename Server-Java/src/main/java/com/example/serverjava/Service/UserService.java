@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -49,11 +50,10 @@ public class UserService {
     }
 
 
-
-    public List<User> getAllAdmins(){
-        Optional<List<User>> admins = userRepository.findAllAdmins();
+    public List<User> getAllAdmins() {
+        Optional<List<User>> admins = userRepository.findAllByRolesIn(Set.of(Role.ADMIN));
         //check if optional is not null
-        if ()
+        return admins.orElse(null);
     }
 
     public void addOrder(User user, Order order) {
