@@ -39,9 +39,9 @@ dependencies {
     implementation 'org.postgresql:postgresql'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-//	runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'com.h2database:h2'
 
 
     // Spring Boot Security
@@ -59,9 +59,9 @@ dependencies {
     // Jackson Annotations
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.15.2'
     // Use the same version as jackson-databind
-    
+
 }
 
-//test {
-//	useJUnitPlatform()
-//}
+test {
+    useJUnitPlatform()
+}
