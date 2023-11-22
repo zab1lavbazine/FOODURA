@@ -125,8 +125,8 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editUser(@RequestBody User user, @PathVariable Long id) {
-        boolean checkEdit = userService.editUser(user, id);
+    public ResponseEntity<String> editUser(@RequestBody UserINFO userDTO, @PathVariable Long id) {
+        boolean checkEdit = userService.editUserWithDTO(userDTO, id);
         if (!checkEdit) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("User not found");
