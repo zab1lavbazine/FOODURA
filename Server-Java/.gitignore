@@ -38,5 +38,3 @@ out/
 
 ### DOCKER ###
 .docker
-Dockerfile
-docker-compose.yml
