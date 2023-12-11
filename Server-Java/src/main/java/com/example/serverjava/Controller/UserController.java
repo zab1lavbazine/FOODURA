@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.ResponseCache;
 import java.util.List;
 
 @RestController
@@ -107,20 +106,20 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<User> login(@RequestBody UserLoginData userLoginData) {
+    public ResponseEntity<?> login(@RequestBody UserLoginData userLoginData) {
         User user = userService.getUserByEmail(userLoginData.getEmail());
         String password = userLoginData.getPassword();
         if (user != null) {
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
             if (passwordEncoder.matches(password, user.getPassword())) {
-                return ResponseEntity.ok(user);
+                return ResponseEntity.ok("Login success");
             } else {
                 return ResponseEntity.status(HttpStatus.CONFLICT)
-                        .body(null);
+                        .body("Wrong password or email");
             }
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(null);
+                    .body("User not found");
         }
     }
 
