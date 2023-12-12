@@ -25,7 +25,7 @@ public class ProductService {
     }
 
     public void addProduct(Product product) {
-        log.info("adding new product : id {}", product.getId());
+        log.info("adding new product : " + product.getName());
         productRepository.save(product);
     }
 

@@ -16,6 +16,7 @@ public class OrderINFO {
     private String notion;
     private UserINFO user;
     private List<ProductINFO> products;
+    private String address;
     private List<Status> statuses;
 
     public OrderINFO(long id, String notion) {

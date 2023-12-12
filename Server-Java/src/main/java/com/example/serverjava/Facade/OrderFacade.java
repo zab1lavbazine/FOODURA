@@ -41,6 +41,7 @@ public class OrderFacade {
         } else {
             Order order = new Order();
             order.setNotion(request.getNotion());
+            order.setAddress(request.getAddress());
             User user = userService.getUserById(request.getUserId());
             order.setUser(user);
             order.getStatuses().add(Status.PROCESSING);
@@ -59,6 +60,7 @@ public class OrderFacade {
         Order order = orderService.getOrderById(id);
         User user = userService.getUserById(request.getUserId());
         order.setUser(user);
+        order.setAddress(request.getAddress());
         order.setNotion(request.getNotion());
         order.setProducts(productService.getAllProductsById(request.getProductIds()));
         orderService.updateOrder(order);
@@ -84,6 +86,7 @@ public class OrderFacade {
             orderDTO.setStatuses(new ArrayList<>(order.getStatuses()));
             UserINFO userDTO = userService.getUserDTO(order.getUser().getId());
             orderDTO.setUser(userDTO);
+            orderDTO.setAddress(order.getAddress());
 
             List<ProductINFO> productINFOList = productService.getAllProductsDTO(order.getProducts());
 

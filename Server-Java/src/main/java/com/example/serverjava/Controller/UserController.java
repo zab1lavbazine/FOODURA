@@ -112,7 +112,7 @@ public class UserController {
         if (user != null) {
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
             if (passwordEncoder.matches(password, user.getPassword())) {
-                return ResponseEntity.ok("Login success");
+                return ResponseEntity.ok(user);
             } else {
                 return ResponseEntity.status(HttpStatus.CONFLICT)
                         .body("Wrong password or email");
