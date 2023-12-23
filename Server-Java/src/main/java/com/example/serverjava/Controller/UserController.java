@@ -78,7 +78,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<String> addNewUser(@RequestBody UserINFO user) {
+    public ResponseEntity<?> addNewUser(@RequestBody UserINFO user) {
         boolean check = userService.saveNewUserFromDTO(user);
         if (!check) {
             return ResponseEntity.status(HttpStatus.CONFLICT)

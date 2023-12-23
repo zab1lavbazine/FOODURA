@@ -41,27 +41,11 @@ public class UserService {
         User userFromDB = getUserById(id);
         if (userFromDB == null) return false;
         userFromDB.setUsername(user.getUsername());
-        userFromDB.setEmail(user.getEmail());
         userFromDB.setPhoneNumber(user.getPhoneNumber());
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        userFromDB.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(userFromDB);
         log.info("user is updated id : {}", user.getId());
         return true;
     }
-
-//    public boolean editUser(User user, Long id) {
-//        User userFromDB = getUserById(id);
-//        if (userFromDB == null) return false;
-//        userFromDB.setUsername(user.getUsername());
-//        userFromDB.setEmail(user.getEmail());
-//        userFromDB.setPhoneNumber(user.getPhoneNumber());
-//        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-//        userFromDB.setPassword(passwordEncoder.encode(user.getPassword()));
-//        userRepository.save(userFromDB);
-//        log.info("user is updated id : {}", user.getId());
-//        return true;
-//    }
 
 
     public List<User> getAllAdmins() {
