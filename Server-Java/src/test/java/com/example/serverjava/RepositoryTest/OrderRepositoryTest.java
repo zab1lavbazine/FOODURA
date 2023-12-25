@@ -12,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @DataJpaTest
 public class OrderRepositoryTest {
@@ -55,8 +56,9 @@ public class OrderRepositoryTest {
 
         orderRepository.save(order);
 
-        Order foundOrder = orderRepository.getOrderById(order.getId()).get();
+        Order foundOrder = orderRepository.findById(order.getId()).orElse(null);
 
+        assertNotNull(foundOrder);
         assertEquals("test", foundOrder.getAddress());
         assertEquals("test", foundOrder.getNotion());
         assertEquals(2, foundOrder.getProducts().size());

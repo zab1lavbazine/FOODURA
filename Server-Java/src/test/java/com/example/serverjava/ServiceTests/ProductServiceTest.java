@@ -2,10 +2,10 @@ package com.example.serverjava.ServiceTests;
 
 
 import com.example.serverjava.Entity.Product;
+import com.example.serverjava.HelperFunction.HelperTestClass;
 import com.example.serverjava.Repository.ProductRepository;
 import com.example.serverjava.Service.ProductService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -23,16 +23,12 @@ public class ProductServiceTest {
 
     @Test
     void testGetProductById(){
-        Product product = new Product();
-        product.setId(1L);
-        product.setName("test");
-        product.setDescription("test");
-        product.setPrice(10);
+        Product product = HelperTestClass.createTestProduct();
 
 
         when(productRepository.findById(1L)).thenReturn(java.util.Optional.of(product));
 
-        assertEquals("test", productService.getProductById(1L).getName());
+        assertEquals(product.getName(), productService.getProductById(1L).getName());
 
     }
 

@@ -14,7 +14,6 @@ import java.util.UUID;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
-    public Optional<Order> getOrderById(Long id);
 
     public List<Order> findByProductsContaining(Product product);
 

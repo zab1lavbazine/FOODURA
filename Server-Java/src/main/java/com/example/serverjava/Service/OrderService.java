@@ -45,7 +45,7 @@ public class OrderService {
 
     public Order getOrderById(Long id) {
         log.info("Getting order with id {} from the database", id);
-        Optional<Order> order = orderRepository.getOrderById(id);
+        Optional<Order> order = orderRepository.findById(id);
         return order.orElse(null);
     }
 
