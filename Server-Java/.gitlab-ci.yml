@@ -5,10 +5,10 @@ stages:
 prepare:
   stage: build
   script:
-    - ./graldew build
+    - ./gradlew build  # Corrected typo
   artifacts:
     paths:
-      - ./app/target/*.tar
+      - ./app/build/libs/*.jar  # Adjusted path for artifacts
 
 run-tests:
   stage: tests
