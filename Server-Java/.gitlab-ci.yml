@@ -16,3 +16,4 @@ run-tests:
     - ./gradlew test
   dependencies:
     - prepare
+cd
