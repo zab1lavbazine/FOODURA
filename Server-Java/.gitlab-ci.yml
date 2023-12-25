@@ -1,0 +1,18 @@
+stages:
+  - build
+  - tests
+
+prepare:
+  stage: build
+  script:
+    - ./graldew build
+  artifacts:
+    paths:
+      - ./app/target/*.tar
+
+run-tests:
+  stage: tests
+  script:
+    - ./gradlew test
+  dependencies:
+    - prepare
