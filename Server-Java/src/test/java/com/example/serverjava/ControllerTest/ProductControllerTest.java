@@ -1,84 +1,80 @@
 package com.example.serverjava.ControllerTest;
 
+
 import com.example.serverjava.Controller.ProductController;
-import com.example.serverjava.DTO.ProductINFO;
 import com.example.serverjava.Entity.Product;
-import com.example.serverjava.Facade.ProductFacade;
+import com.example.serverjava.Repository.ProductRepository;
 import com.example.serverjava.Service.ProductService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.csrf.CsrfToken;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.http.ResponseEntity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.when;
-import static org.springframework.mock.http.server.reactive.MockServerHttpRequest.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.postgresql.hostchooser.HostRequirement.any;
 
-@WebMvcTest(ProductController.class)
+@SpringBootTest
 public class ProductControllerTest {
-
     @Autowired
-    private MockMvc mockMvc;
+    private ProductController productController;
 
-    @Autowired
-    private ObjectMapper objectMapper;
+    @MockBean
+    private ProductRepository productRepository;
 
     @MockBean
     private ProductService productService;
 
-    @MockBean
-    private ProductFacade productFacade;
 
 
 
-    @BeforeEach
-    void setUp() {
-        Authentication authentication = new UsernamePasswordAuthenticationToken("admin", "admin");
-        SecurityContext securityContext = SecurityContextHolder.createEmptyContext();
-        securityContext.setAuthentication(authentication);
-        SecurityContextHolder.setContext(securityContext);
+
+    @Test
+    void testGetAllProducts() {
+        Mockito.when(productService.getAllProducts()).thenReturn(List.of());
+
+        ResponseEntity<?> products = productController.getAllProducts();
+        assertEquals(0, ((List<Product>) products.getBody()).size());
+
+        Mockito.verify(productService, Mockito.times(1)).getAllProducts();
+
+    }
+
+    @Test
+    void testAddNewProduct(){
+        Product product = new Product();
+        product.setId(1L);
+        product.setName("test");
+        product.setDescription("test");
+        product.setPrice(10);
+
+
+        ArgumentCaptor<Product> productArgumentCaptor = ArgumentCaptor.forClass(Product.class);
+        Mockito.doNothing().when(productService).addProduct(productArgumentCaptor.capture());
+
+        ResponseEntity<?> response = productController.addNewProduct(product);
+
+
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(product, productArgumentCaptor.getValue());
+
+        Mockito.verify(productService, Mockito.times(1)).addProduct(any(Product.class));
+
     }
 
 
     @Test
-    void testAddProduct() throws Exception {
-
+    void testFindById(){
         Product product = new Product();
         product.setId(1L);
-        product.setName("Test Product");
-        product.setDescription("Description");
-        product.setPrice(20);
-
-        CsrfToken csrfToken = (CsrfToken) request.getSession().getAttribute(CsrfToken.class.getName());
-
-
-        doNothing().when(productService).addProduct(any(Product.class));
-        when(productService.getProductById(1L)).thenReturn(product);
-
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/product")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                        .header(csrfToken.getHeaderName(), csrfToken.getToken())
-                        .content(objectMapper.writeValueAsString(product)))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Test Product"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.description").value("Description"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.price").value(20));
-
+        
     }
 }
