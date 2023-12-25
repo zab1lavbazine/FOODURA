@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.ResponseEntity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,9 +73,22 @@ public class ProductControllerTest {
 
 
     @Test
-    void testFindById(){
+    void testFindById() {
         Product product = new Product();
         product.setId(1L);
-        
+        product.setName("test");
+        product.setDescription("test");
+        product.setPrice(10);
+
+        Mockito.when(productService.getProductById(1L)).thenReturn(product);
+
+
+        try {
+            ResponseEntity<?> response = productController.findById(1L);
+            assertEquals(200, response.getStatusCodeValue());
+            assertEquals(product, response.getBody());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

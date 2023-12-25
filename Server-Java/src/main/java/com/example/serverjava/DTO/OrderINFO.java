@@ -19,8 +19,9 @@ public class OrderINFO {
     private String address;
     private List<Status> statuses;
 
-    public OrderINFO(long id, String notion) {
+    public OrderINFO(long id, String notion, String address) {
         this.id = id;
         this.notion = notion;
+        this.address = address;
     }
 }

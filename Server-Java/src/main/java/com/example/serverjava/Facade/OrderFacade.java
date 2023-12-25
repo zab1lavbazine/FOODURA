@@ -82,7 +82,7 @@ public class OrderFacade {
 
 
         for (Order order : orderList) {
-            OrderINFO orderDTO = new OrderINFO(order.getId(), order.getNotion());
+            OrderINFO orderDTO = new OrderINFO(order.getId(), order.getNotion(), order.getAddress());
             orderDTO.setStatuses(new ArrayList<>(order.getStatuses()));
             UserINFO userDTO = userService.getUserDTO(order.getUser().getId());
             orderDTO.setUser(userDTO);
