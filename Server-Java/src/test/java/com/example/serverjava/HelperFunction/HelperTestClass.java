@@ -1,5 +1,6 @@
 package com.example.serverjava.HelperFunction;
 
+import com.example.serverjava.DTO.UserINFO;
 import com.example.serverjava.Entity.Enum.Role;
 import com.example.serverjava.Entity.Order;
 import com.example.serverjava.Entity.Product;
@@ -45,5 +46,14 @@ public class HelperTestClass {
         orderWithProductsRequest.setProductIds(List.of(1L));
         orderWithProductsRequest.setUserId(1L);
         return orderWithProductsRequest;
+    }
+
+    public static UserINFO createTestUserINFO() {
+        UserINFO user = new UserINFO();
+        user.setId(1L);
+        user.setUsername("test");
+        user.setPassword("test");
+        user.setPhoneNumber("123123");
+        return user;
     }
 }

@@ -6,8 +6,10 @@ import com.example.serverjava.DTO.UserINFO;
 import com.example.serverjava.Entity.Enum.Role;
 import com.example.serverjava.Entity.User;
 import com.example.serverjava.Facade.UserFacade;
+import com.example.serverjava.HelperFunction.HelperTestClass;
 import com.example.serverjava.Repository.UserRepository;
 import com.example.serverjava.Service.UserService;
+import org.hibernate.id.uuid.Helper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,20 +61,31 @@ public class UserControllerTest {
 
 
     @Test
-    void testGetUserByEmail(){
-        User user = new User();
-        user.setId(1L);
-        user.setUsername("test");
-        user.setPassword("test");
-        user.setPhoneNumber("123123");
-        user.setRoles(Set.of(Role.USER));
+    void testGetUserByEmail() {
+        User user = HelperTestClass.createTestUser();
 
         Mockito.when(userService.getUserByEmail(user.getEmail())).thenReturn(user);
-         ResponseEntity<?> foundUser = userController.getUserByEmail(user.getEmail());
+        ResponseEntity<?> foundUser = userController.getUserByEmail(user.getEmail());
 
-         assertEquals(user, foundUser.getBody());
+        assertEquals(user, foundUser.getBody());
 
-         Mockito.verify(userService, Mockito.times(1)).getUserByEmail(user.getEmail());
+        Mockito.verify(userService, Mockito.times(1)).getUserByEmail(user.getEmail());
+    }
+
+
+    @Test
+    void testAddNewUser() {
+        User user = HelperTestClass.createTestUser();
+        UserINFO userINFO = HelperTestClass.createTestUserINFO();
+        Mockito.when(userService.saveNewUser(user)).thenReturn(true);
+        Mockito.when(userService.saveNewUserFromDTO(userINFO)).thenReturn(true);
+
+        ResponseEntity<?> response = userController.addNewUser(userINFO);
+
+        assertEquals(200, response.getStatusCodeValue());
+
+
+        Mockito.verify(userService, Mockito.times(1)).saveNewUserFromDTO(userINFO);
     }
 
 }
