@@ -2,6 +2,7 @@ package com.example.serverjava.FacadeTest;
 
 import com.example.serverjava.DTO.OrderINFO;
 import com.example.serverjava.Entity.Order;
+import com.example.serverjava.Entity.SupportEntity.OrderWithProductsRequest;
 import com.example.serverjava.Facade.OrderFacade;
 import com.example.serverjava.HelperFunction.HelperTestClass;
 import com.example.serverjava.Service.OrderService;
@@ -35,7 +36,8 @@ public class OrderFacadeTest {
 
 
     @Test
-void testGetAllOrdersDTO() {
+    void testGetAllOrdersDTO() {
+
         Order order = HelperTestClass.createTestOrder();
         when(orderService.getAllOrders()).thenReturn(List.of(order));
         when(userService.getUserById(order.getUser().getId())).thenReturn(order.getUser());
@@ -55,4 +57,6 @@ void testGetAllOrdersDTO() {
         assertEquals(orderINFO.getNotion(), orders.get(0).getNotion());
         assertEquals(orderINFO.getAddress(), orders.get(0).getAddress());
     }
+
+
 }

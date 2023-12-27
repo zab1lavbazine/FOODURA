@@ -100,15 +100,15 @@ public class OrderFacade {
     public void deleteOrderFromProducts(Product product) {
         List<Order> orderList = product.getOrders();
         for (Order order : orderList) {
-           List <Product> productList = order.getProducts();
-           if (productList == null) continue;
-           productList.removeIf(product1 -> product1.getId().equals(product.getId()));
-           if (productList.isEmpty()) {
-               orderService.deleteOrderByUser(order.getUser());
-           } else {
-               order.setProducts(productList);
-               orderService.updateOrder(order);
-           }
+            List<Product> productList = order.getProducts();
+            if (productList == null) continue;
+            productList.removeIf(product1 -> product1.getId().equals(product.getId()));
+            if (productList.isEmpty()) {
+                orderService.deleteOrderByUser(order.getUser());
+            } else {
+                order.setProducts(productList);
+                orderService.updateOrder(order);
+            }
         }
     }
 }

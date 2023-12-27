@@ -3,6 +3,7 @@ package com.example.serverjava.HelperFunction;
 import com.example.serverjava.Entity.Enum.Role;
 import com.example.serverjava.Entity.Order;
 import com.example.serverjava.Entity.Product;
+import com.example.serverjava.Entity.SupportEntity.OrderWithProductsRequest;
 import com.example.serverjava.Entity.User;
 
 import java.util.List;
@@ -35,5 +36,14 @@ public class HelperTestClass {
         user.setPassword("Test Password");
         user.setRoles(Set.of(Role.USER));
         return user;
+    }
+
+    public static OrderWithProductsRequest createTestOrderWithProductsRequest() {
+        OrderWithProductsRequest orderWithProductsRequest = new OrderWithProductsRequest();
+        orderWithProductsRequest.setAddress("Test Address");
+        orderWithProductsRequest.setNotion("Test Notion");
+        orderWithProductsRequest.setProductIds(List.of(1L));
+        orderWithProductsRequest.setUserId(1L);
+        return orderWithProductsRequest;
     }
 }
