@@ -11,6 +11,7 @@ import java.util.Set;
 public class HelperTestClass {
     public static Product createTestProduct() {
         Product product = new Product();
+        product.setId(1L);
         product.setName("Test Product");
         product.setPrice(100);
         product.setDescription("Test Description");
@@ -19,14 +20,17 @@ public class HelperTestClass {
 
     public static Order createTestOrder() {
         Order order = new Order();
+        order.setId(1L);
         order.setAddress("Test Address");
         order.setNotion("Test Notion");
         order.setProducts(List.of(createTestProduct()));
+        order.setUser(createTestUser());
         return order;
     }
 
     public static User createTestUser() {
         User user = new User();
+        user.setId(1L);
         user.setUsername("Test Username");
         user.setPassword("Test Password");
         user.setRoles(Set.of(Role.USER));

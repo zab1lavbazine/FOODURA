@@ -5,8 +5,10 @@ import com.example.serverjava.DTO.OrderINFO;
 import com.example.serverjava.DTO.ProductINFO;
 import com.example.serverjava.DTO.UserINFO;
 import com.example.serverjava.Entity.Product;
+import com.example.serverjava.Entity.SupportEntity.OrderWithProductsRequest;
 import com.example.serverjava.Entity.User;
 import com.example.serverjava.Facade.OrderFacade;
+import com.example.serverjava.HelperFunction.HelperTestClass;
 import com.example.serverjava.Repository.OrderRepository;
 import com.example.serverjava.Service.OrderService;
 import org.aspectj.lang.annotation.Before;
@@ -67,6 +69,7 @@ public class OrderControllerTest {
 
     }
 
+
     @Test
     void testGetAllOrders() {
         try {
@@ -80,5 +83,34 @@ public class OrderControllerTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    void getOrderById() {
+        Mockito.when(orderService.getOrderById(1L)).thenReturn(HelperTestClass.createTestOrder());
+
+        ResponseEntity<?> response = orderController.getOrderById(1L);
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(HelperTestClass.createTestOrder(), response.getBody());
+
+        Mockito.verify(orderService, Mockito.times(1)).getOrderById(1L);
+    }
+
+    @Test
+    void changeOrder() {
+        OrderWithProductsRequest orderWithProductsRequest = new OrderWithProductsRequest();
+        orderWithProductsRequest.setAddress("test");
+        orderWithProductsRequest.setNotion("test");
+        orderWithProductsRequest.setProductIds(List.of(1L));
+        orderWithProductsRequest.setUserId(1L);
+
+
+        Mockito.doNothing().when(orderFacade).editOrder(1L, orderWithProductsRequest);
+
+        ResponseEntity<?> response = orderController.editOrder(1L, orderWithProductsRequest);
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals("Notion of the product have been changed", response.getBody());
+
+        Mockito.verify(orderFacade, Mockito.times(1)).editOrder(1L, orderWithProductsRequest);
     }
 }
