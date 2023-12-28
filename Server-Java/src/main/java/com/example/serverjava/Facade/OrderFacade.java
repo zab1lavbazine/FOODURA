@@ -12,6 +12,7 @@ import com.example.serverjava.Service.ProductService;
 import com.example.serverjava.Service.UserService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class OrderFacade {
     private final OrderService orderService;
@@ -27,10 +29,10 @@ public class OrderFacade {
 
 
     @Transactional
-    public void createNewOrder(OrderWithProductsRequest request) throws Exception {
+    public void createNewOrder(OrderWithProductsRequest request) {
 
         // checking for existing order
-        Order existingOrder = checkForExistingOrderForUser(request.getUserId(), request.getProductIds());
+        Order existingOrder = checkForExistingOrderForUser(request.getUserId());
 
         // getting add products from request
         List<Product> productList = productService.getAllProductsById(request.getProductIds());
@@ -52,11 +54,16 @@ public class OrderFacade {
     }
 
 
-    private Order checkForExistingOrderForUser(Long userId, List<Long> productsId) {
+    private Order checkForExistingOrderForUser(Long userId) {
         return orderService.getOrderByUserId(userId);
     }
 
     public void editOrder(Long id, OrderWithProductsRequest request) {
+        if (request.getProductIds().isEmpty()) {
+            deleteOrder(id);
+            return;
+        }
+        log.info("Editing order with id {}", id);
         Order order = orderService.getOrderById(id);
         User user = userService.getUserById(request.getUserId());
         order.setUser(user);
@@ -68,6 +75,7 @@ public class OrderFacade {
 
 
     public void deleteOrder(Long id) {
+        log.info("Deleting order with id {}", id);
         Order order = orderService.getOrderById(id);
         userService.deleteOrderFromUser(order);
         order.setUser(null);

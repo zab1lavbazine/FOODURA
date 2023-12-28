@@ -8,9 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @Slf4j
@@ -34,13 +32,14 @@ public class ProductService {
         return productRepository.findById(id).orElse(null);
     }
 
-    public List<ProductINFO> getAllProductsDTO(List<Product> products) throws IOException {
+    public List<ProductINFO> getAllProductsDTO(List<Product> products) {
         log.info("getting all products DTO");
         return ProductINFO.from(products);
     }
 
     public List<Product> getAllProductsById(List<Long> productsId) {
         log.info("getting all products by id");
+        log.info("products id : {}", productsId);
         return productRepository.findAllById(productsId);
     }
 
