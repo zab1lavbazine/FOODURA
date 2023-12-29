@@ -1,18 +1,17 @@
 stages:
-  - prepare
   - build
+  - test
 
-variables:
-  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
-
-test:
-  stage: prepare
-  image: adoptopenjdk/openjdk17
-  script:
-    - ./gradlew test
-
-build_app:
+build-app:
   stage: build
-  image: adoptopenjdk/openjdk17
+  tags: [java-gradlew]
   script:
     - ./gradlew build
+
+test:
+  stage: test
+  tags: [java-gradlew]
+  script:
+    - ./gradlew test
+  dependencies:
+    - build-app
