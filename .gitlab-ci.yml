@@ -1,18 +1,10 @@
 stages:
-  - prepare
   - build
+  - test
 
-prepare:
-  stage: prepare
-  script:
-    - ./gradlew clean assemble
-
-test:
-  stage: prepare
-  script:
-    - ./gradlew test
-
-build_app:
+build-app-test:
   stage: build
+  tags: [java-gradlew]
   script:
     - ./gradlew build
+    - ./gradlew test
