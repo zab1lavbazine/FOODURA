@@ -2,10 +2,6 @@ stages:
   - prepare
   - build
 
-prepare:
-  stage: prepare
-  script:
-    - ./gradlew clean assemble
 
 test:
   stage: prepare
