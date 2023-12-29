@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - OrderRepositoryTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>OrderRepositoryTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.serverjava.RepositoryTest.html">com.example.serverjava.RepositoryTest</a> &gt; OrderRepositoryTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.054s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testDeleteEmptyOrders()</td>
+<td class="success">0.045s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetOrderById()</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2023-12-29T01:20:46.281+01:00  INFO 7947 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-29T01:20:46.290+01:00  INFO 7947 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.OrderRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-12-29T01:20:46.303+01:00  INFO 7947 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Starting OrderRepositoryTest using Java 17.0.9 with PID 7947 (started by bar in /home/bar/FIT/java-server/Server-Java)
+2023-12-29T01:20:46.304+01:00  INFO 7947 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-12-29T01:20:46.352+01:00  INFO 7947 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-29T01:20:46.361+01:00  INFO 7947 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2023-12-29T01:20:46.371+01:00  INFO 7947 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-12-29T01:20:46.384+01:00  INFO 7947 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:94a51e80-554e-4690-8dd5-37f5847530b4;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-12-29T01:20:46.398+01:00  INFO 7947 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-29T01:20:46.401+01:00  INFO 7947 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-29T01:20:46.401+01:00  INFO 7947 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-29T01:20:46.415+01:00  INFO 7947 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-29T01:20:46.444+01:00  INFO 7947 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: drop table if exists order_product cascade 
+Hibernate: drop table if exists order_status cascade 
+Hibernate: drop table if exists orders cascade 
+Hibernate: drop table if exists products cascade 
+Hibernate: drop table if exists user_role cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: drop sequence if exists orders_seq
+Hibernate: drop sequence if exists products_seq
+Hibernate: drop sequence if exists users_seq
+Hibernate: create sequence orders_seq start with 1 increment by 50
+Hibernate: create sequence products_seq start with 1 increment by 50
+Hibernate: create sequence users_seq start with 1 increment by 50
+Hibernate: create table order_product (order_id bigint not null, product_id bigint not null)
+Hibernate: create table order_status (order_id bigint not null, statuses varchar(255) check (statuses in ('PROCESSING','COMPLETED','CANCELLED','UPDATED')))
+Hibernate: create table orders (id bigint not null, user_id bigint, address varchar(255), notion varchar(255), primary key (id))
+Hibernate: create table products (price integer, id bigint not null, description varchar(255), name varchar(255), primary key (id))
+Hibernate: create table user_role (user_id bigint not null, roles varchar(255) check (roles in ('USER','ADMIN')))
+Hibernate: create table users (active boolean, id bigint not null, password varchar(1000), email varchar(255) unique, phone_number varchar(255), username varchar(255), primary key (id))
+Hibernate: alter table if exists order_product add constraint FKo6helt0ucmegaeachjpx40xhe foreign key (product_id) references products
+Hibernate: alter table if exists order_product add constraint FKl5mnj9n0di7k1v90yxnthkc73 foreign key (order_id) references orders
+Hibernate: alter table if exists order_status add constraint FK48efngdcgl1e9tkfbcalk35gl foreign key (order_id) references orders
+Hibernate: alter table if exists orders add constraint FK32ql8ubntj5uh44ph9659tiih foreign key (user_id) references users
+Hibernate: alter table if exists user_role add constraint FKj345gk1bovqvfame88rcx7yyx foreign key (user_id) references users
+2023-12-29T01:20:46.456+01:00  INFO 7947 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-29T01:20:46.503+01:00  INFO 7947 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Started OrderRepositoryTest in 0.21 seconds (process running for 8.751)
+Hibernate: select o1_0.id,o1_0.address,o1_0.notion,s1_0.order_id,s1_0.statuses,u1_0.id,u1_0.active,u1_0.email,u1_0.password,u1_0.phone_number,r1_0.user_id,r1_0.roles,u1_0.username from orders o1_0 left join order_status s1_0 on o1_0.id=s1_0.order_id left join users u1_0 on u1_0.id=o1_0.user_id left join user_role r1_0 on u1_0.id=r1_0.user_id where o1_0.id=?
+Hibernate: select next value for orders_seq
+Hibernate: insert into orders (address,notion,user_id,id) values (?,?,?,?)
+Hibernate: delete from order_product where order_id in(select o1_0.id from orders o1_0 where not exists(select 1 from order_product p1_0 where o1_0.id=p1_0.order_id))
+Hibernate: delete from order_status where order_id in(select o1_0.id from orders o1_0 where not exists(select 1 from order_product p1_0 where o1_0.id=p1_0.order_id))
+Hibernate: delete from orders where not exists(select 1 from order_product p1_0 where orders.id=p1_0.order_id)
+Hibernate: select o1_0.id,o1_0.address,o1_0.notion,o1_0.user_id from orders o1_0
+Hibernate: select o1_0.id,o1_0.address,o1_0.notion,s1_0.order_id,s1_0.statuses,u1_0.id,u1_0.active,u1_0.email,u1_0.password,u1_0.phone_number,r1_0.user_id,r1_0.roles,u1_0.username from orders o1_0 left join order_status s1_0 on o1_0.id=s1_0.order_id left join users u1_0 on u1_0.id=o1_0.user_id left join user_role r1_0 on u1_0.id=r1_0.user_id where o1_0.id=?
+Hibernate: select next value for orders_seq
+Hibernate: select p1_0.id,p1_0.description,p1_0.name,p1_0.price from products p1_0 where p1_0.id=?
+Hibernate: select next value for products_seq
+Hibernate: select p1_0.id,p1_0.description,p1_0.name,p1_0.price from products p1_0 where p1_0.id=?
+Hibernate: select next value for products_seq
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.2.1</a> at Dec 29, 2023, 1:20:48 AM</p>
+</div>
+</div>
+</body>
+</html>

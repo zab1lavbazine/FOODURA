@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - OrderFacadeTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>OrderFacadeTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.serverjava.FacadeTest.html">com.example.serverjava.FacadeTest</a> &gt; OrderFacadeTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.002s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testGetAllOrdersDTO()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2023-12-29T01:20:45.537+01:00  INFO 7947 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.FacadeTest.OrderFacadeTest]: OrderFacadeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-29T01:20:45.540+01:00  INFO 7947 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.FacadeTest.OrderFacadeTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-12-29T01:20:45.558+01:00  INFO 7947 --- [    Test worker] c.e.s.FacadeTest.OrderFacadeTest         : Starting OrderFacadeTest using Java 17.0.9 with PID 7947 (started by bar in /home/bar/FIT/java-server/Server-Java)
+2023-12-29T01:20:45.559+01:00  INFO 7947 --- [    Test worker] c.e.s.FacadeTest.OrderFacadeTest         : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-12-29T01:20:45.666+01:00  INFO 7947 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-29T01:20:45.674+01:00  INFO 7947 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2023-12-29T01:20:45.744+01:00  INFO 7947 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-29T01:20:45.749+01:00  INFO 7947 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-29T01:20:45.749+01:00  INFO 7947 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-29T01:20:45.750+01:00  INFO 7947 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-12-29T01:20:45.751+01:00  INFO 7947 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:testdb user=SA
+2023-12-29T01:20:45.751+01:00  INFO 7947 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-12-29T01:20:45.771+01:00  INFO 7947 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-29T01:20:45.822+01:00  INFO 7947 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-29T01:20:45.838+01:00  INFO 7947 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-29T01:20:45.915+01:00  WARN 7947 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-29T01:20:45.953+01:00  INFO 7947 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3045fbb4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@411b3740, org.springframework.security.web.context.SecurityContextHolderFilter@458f1355, org.springframework.security.web.header.HeaderWriterFilter@763d7eef, org.springframework.security.web.authentication.logout.LogoutFilter@6becf200, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3c3562c0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4bfd9e3a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@562a4bac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2e00032d, org.springframework.security.web.session.SessionManagementFilter@3ea7d936, org.springframework.security.web.access.ExceptionTranslationFilter@4f141a7, org.springframework.security.web.access.intercept.AuthorizationFilter@4834e816]
+2023-12-29T01:20:45.989+01:00  INFO 7947 --- [    Test worker] c.e.s.FacadeTest.OrderFacadeTest         : Started OrderFacadeTest in 0.446 seconds (process running for 8.238)
+2023-12-29T01:20:45.994+01:00  INFO 7947 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.2.1</a> at Dec 29, 2023, 1:20:48 AM</p>
+</div>
+</div>
+</body>
+</html>

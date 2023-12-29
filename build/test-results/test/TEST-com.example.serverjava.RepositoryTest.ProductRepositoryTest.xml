@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.serverjava.RepositoryTest.ProductRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-12-29T00:20:46" hostname="bar-Latitude-3420" time="0.012">
+  <properties/>
+  <testcase name="testFindId()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.005"/>
+  <testcase name="testSaveNewProduct()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.006"/>
+  <system-out><![CDATA[2023-12-29T01:20:46.563+01:00  INFO 7947 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-29T01:20:46.566+01:00  INFO 7947 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.ProductRepositoryTest
+Hibernate: select p1_0.id,p1_0.description,p1_0.name,p1_0.price from products p1_0 where p1_0.id=?
+Hibernate: select p1_0.id,p1_0.description,p1_0.name,p1_0.price from products p1_0 where p1_0.id=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
