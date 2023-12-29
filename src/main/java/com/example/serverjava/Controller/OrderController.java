@@ -7,6 +7,7 @@ import com.example.serverjava.Entity.SupportEntity.OrderWithProductsRequest;
 import com.example.serverjava.Facade.OrderFacade;
 import com.example.serverjava.Service.OrderService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 @RequestMapping("/api/order")
 public class OrderController {
 
@@ -29,7 +31,7 @@ public class OrderController {
             List<OrderINFO> orderINFO = orderFacade.getAllOrdersDTO();
             return ResponseEntity.ok(orderINFO);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Error getting all orders", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(null);
         }
@@ -42,7 +44,7 @@ public class OrderController {
             orderFacade.createNewOrder(request);
             return ResponseEntity.ok("New order is added");
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Error creating user", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error creating user");
         }

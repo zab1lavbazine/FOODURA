@@ -48,7 +48,7 @@ public class OrderFacade {
             order.setUser(user);
             order.getStatuses().add(Status.PROCESSING);
             order.setProducts(productList);
-            userService.addOrder(order.getUser(), order);
+            order.getUser().getOrderList().add(order);
             orderService.addNewOrder(order);
         }
     }

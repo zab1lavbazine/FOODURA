@@ -3,6 +3,7 @@ package com.example.serverjava.Service;
 import com.example.serverjava.DTO.UserINFO;
 import com.example.serverjava.Entity.Order;
 import com.example.serverjava.Entity.Enum.Role;
+import com.example.serverjava.Entity.SupportEntity.UserLoginData;
 import com.example.serverjava.Entity.User;
 import com.example.serverjava.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -31,6 +32,14 @@ public class UserService {
         return UserINFO.from(userList);
     }
 
+
+    public boolean login(UserLoginData userLoginData){
+        User user = getUserByEmail(userLoginData.getEmail());
+        if (user == null) return false;
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        return passwordEncoder.matches(userLoginData.getPassword(), user.getPassword());
+    }
+
     public User getUserById(Long id) {
         log.info("Find user with id: {}", id);
         return userRepository.findById(id).orElse(null);
@@ -50,22 +59,15 @@ public class UserService {
 
     public List<User> getAllAdmins() {
         Optional<List<User>> admins = userRepository.findAllByRolesIn(Set.of(Role.ADMIN));
-        //check if optional is not null
         return admins.orElse(null);
     }
 
-    public void addOrder(User user, Order order) {
-        user.getOrderList().add(order);
-        userRepository.save(user);
-    }
 
-
-    public boolean deleteUserById(Long id) {
+    public void deleteUserById(Long id) {
         User user = getUserById(id);
-        if (user == null) return false;
+        if (user == null) return;
         userRepository.delete(user);
         log.info("user is deleted id : {}", user.getId());
-        return true;
     }
 
     public boolean saveNewUser(User user) {

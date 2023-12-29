@@ -7,6 +7,7 @@ import com.example.serverjava.Service.ProductService;
 
 import lombok.RequiredArgsConstructor;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 @RequestMapping("/api/product")
 public class ProductController {
 
@@ -37,7 +39,7 @@ public class ProductController {
                         .body(new ErrorResponse("not found"));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Error getting all products", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(new ErrorResponse("Error"));
         }

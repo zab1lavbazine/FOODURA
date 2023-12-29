@@ -107,19 +107,13 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserLoginData userLoginData) {
-        User user = userService.getUserByEmail(userLoginData.getEmail());
-        String password = userLoginData.getPassword();
-        if (user != null) {
-            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            if (passwordEncoder.matches(password, user.getPassword())) {
-                return ResponseEntity.ok(user);
-            } else {
-                return ResponseEntity.status(HttpStatus.CONFLICT)
-                        .body("Wrong password or email");
-            }
+        boolean check = userService.login(userLoginData);
+
+        if (!check) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("Wrong password or email");
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("User not found");
+            return ResponseEntity.ok("Logged in");
         }
     }
 

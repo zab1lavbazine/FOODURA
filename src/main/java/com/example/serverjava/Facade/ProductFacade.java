@@ -1,18 +1,11 @@
 package com.example.serverjava.Facade;
 
 
-import com.example.serverjava.Entity.Order;
 import com.example.serverjava.Entity.Product;
-import com.example.serverjava.Repository.OrderRepository;
-import com.example.serverjava.Service.OrderCleanUpService;
-import com.example.serverjava.Service.OrderService;
 import com.example.serverjava.Service.ProductService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.serverjava.RepositoryTest.OrderRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-12-29T02:53:02" hostname="bar-Latitude-3420" time="0.062">
+<testsuite name="com.example.serverjava.RepositoryTest.OrderRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-12-29T19:51:54" hostname="bar-Latitude-3420" time="0.053">
   <properties/>
-  <testcase name="testDeleteEmptyOrders()" classname="com.example.serverjava.RepositoryTest.OrderRepositoryTest" time="0.048"/>
-  <testcase name="testGetOrderById()" classname="com.example.serverjava.RepositoryTest.OrderRepositoryTest" time="0.013"/>
-  <system-out><![CDATA[2023-12-29T03:53:02.274+01:00  INFO 4460 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-12-29T03:53:02.312+01:00  INFO 4460 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.OrderRepositoryTest
+  <testcase name="testDeleteEmptyOrders()" classname="com.example.serverjava.RepositoryTest.OrderRepositoryTest" time="0.042"/>
+  <testcase name="testGetOrderById()" classname="com.example.serverjava.RepositoryTest.OrderRepositoryTest" time="0.01"/>
+  <system-out><![CDATA[2023-12-29T20:51:53.928+01:00  INFO 28648 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-29T20:51:53.937+01:00  INFO 28648 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.OrderRepositoryTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,17 +14,17 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-2023-12-29T03:53:02.329+01:00  INFO 4460 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Starting OrderRepositoryTest using Java 17.0.9 with PID 4460 (started by bar in /home/bar/FIT/java-server)
-2023-12-29T03:53:02.330+01:00  INFO 4460 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : No active profile set, falling back to 1 default profile: "default"
-2023-12-29T03:53:02.370+01:00  INFO 4460 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-29T03:53:02.376+01:00  INFO 4460 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 3 JPA repository interfaces.
-2023-12-29T03:53:02.384+01:00  INFO 4460 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2023-12-29T03:53:02.398+01:00  INFO 4460 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:bd7242a9-5818-4976-9b59-14cc67706bb8;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2023-12-29T03:53:02.411+01:00  INFO 4460 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-29T03:53:02.415+01:00  INFO 4460 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-29T03:53:02.415+01:00  INFO 4460 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-12-29T03:53:02.437+01:00  INFO 4460 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-29T03:53:02.464+01:00  INFO 4460 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-29T20:51:53.949+01:00  INFO 28648 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Starting OrderRepositoryTest using Java 17.0.9 with PID 28648 (started by bar in /home/bar/FIT/java-server)
+2023-12-29T20:51:53.949+01:00  INFO 28648 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : No active profile set, falling back to 1 default profile: "default"
+2023-12-29T20:51:53.986+01:00  INFO 28648 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-29T20:51:53.991+01:00  INFO 28648 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 3 JPA repository interfaces.
+2023-12-29T20:51:53.997+01:00  INFO 28648 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-12-29T20:51:54.014+01:00  INFO 28648 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:7f3015da-da0a-4f63-9e72-7682d9e26e2f;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-12-29T20:51:54.025+01:00  INFO 28648 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-29T20:51:54.028+01:00  INFO 28648 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-29T20:51:54.028+01:00  INFO 28648 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-29T20:51:54.041+01:00  INFO 28648 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-29T20:51:54.066+01:00  INFO 28648 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 Hibernate: drop table if exists order_product cascade 
 Hibernate: drop table if exists order_status cascade 
 Hibernate: drop table if exists orders cascade 
@@ -48,8 +48,8 @@ Hibernate: alter table if exists order_product add constraint FKl5mnj9n0di7k1v90
 Hibernate: alter table if exists order_status add constraint FK48efngdcgl1e9tkfbcalk35gl foreign key (order_id) references orders
 Hibernate: alter table if exists orders add constraint FK32ql8ubntj5uh44ph9659tiih foreign key (user_id) references users
 Hibernate: alter table if exists user_role add constraint FKj345gk1bovqvfame88rcx7yyx foreign key (user_id) references users
-2023-12-29T03:53:02.477+01:00  INFO 4460 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-29T03:53:02.536+01:00  INFO 4460 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Started OrderRepositoryTest in 0.222 seconds (process running for 8.816)
+2023-12-29T20:51:54.078+01:00  INFO 28648 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-29T20:51:54.156+01:00  INFO 28648 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Started OrderRepositoryTest in 0.216 seconds (process running for 7.462)
 Hibernate: select o1_0.id,o1_0.address,o1_0.notion,s1_0.order_id,s1_0.statuses,u1_0.id,u1_0.active,u1_0.email,u1_0.password,u1_0.phone_number,r1_0.user_id,r1_0.roles,u1_0.username from orders o1_0 left join order_status s1_0 on o1_0.id=s1_0.order_id left join users u1_0 on u1_0.id=o1_0.user_id left join user_role r1_0 on u1_0.id=r1_0.user_id where o1_0.id=?
 Hibernate: select next value for orders_seq
 Hibernate: insert into orders (address,notion,user_id,id) values (?,?,?,?)
