@@ -2,16 +2,9 @@ stages:
   - build
   - test
 
-build-app:
+build-app-test:
   stage: build
   tags: [java-gradlew]
   script:
     - ./gradlew build
-
-test:
-  stage: test
-  tags: [java-gradlew]
-  script:
     - ./gradlew test
-  dependencies:
-    - build-app
