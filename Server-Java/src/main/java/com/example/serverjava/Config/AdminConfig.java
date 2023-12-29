@@ -33,7 +33,7 @@ public class AdminConfig implements CommandLineRunner {
     private PasswordEncoder passwordEncoder;
 
     public AdminConfig(UserRepository userRepository, PasswordEncoder passwordEncoder, OrderRepository orderRepository,
-            ProductRepository productRepository) {
+                       ProductRepository productRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.orderRepository = orderRepository;
@@ -51,22 +51,7 @@ public class AdminConfig implements CommandLineRunner {
             user.setRoles(Set.of(Role.ADMIN));
             user.setActive(true);
             user.setUsername("admin");
-
-            Product product = new Product();
-            product.setName("product");
-            product.setPrice(1000);
-            product.setDescription("description");
-
-            productRepository.save(product);
             userRepository.save(user);
-
-            Order order = new Order();
-            order.setProducts(List.of(product));
-            order.setUser(user);
-            order.setAddress("address");
-            order.setNotion("notion");
-            orderRepository.save(order);
-
         } else {
             log.info("Admin already exists");
         }
