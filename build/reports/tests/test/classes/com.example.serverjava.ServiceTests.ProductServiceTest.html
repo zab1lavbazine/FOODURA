@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-12-29T01:20:47.231+01:00  INFO 7947 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ServiceTests.ProductServiceTest]: ProductServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-12-29T01:20:47.232+01:00  INFO 7947 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ServiceTests.ProductServiceTest
+<pre>2023-12-29T03:53:03.379+01:00  INFO 4460 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ServiceTests.ProductServiceTest]: ProductServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-29T03:53:03.380+01:00  INFO 4460 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ServiceTests.ProductServiceTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -98,24 +98,24 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-2023-12-29T01:20:47.241+01:00  INFO 7947 --- [    Test worker] c.e.s.ServiceTests.ProductServiceTest    : Starting ProductServiceTest using Java 17.0.9 with PID 7947 (started by bar in /home/bar/FIT/java-server/Server-Java)
-2023-12-29T01:20:47.241+01:00  INFO 7947 --- [    Test worker] c.e.s.ServiceTests.ProductServiceTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-12-29T01:20:47.322+01:00  INFO 7947 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-29T01:20:47.329+01:00  INFO 7947 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
-2023-12-29T01:20:47.392+01:00  INFO 7947 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-29T01:20:47.397+01:00  INFO 7947 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-29T01:20:47.397+01:00  INFO 7947 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-12-29T01:20:47.398+01:00  INFO 7947 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
-2023-12-29T01:20:47.399+01:00  INFO 7947 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection conn61: url=jdbc:h2:mem:testdb user=SA
-2023-12-29T01:20:47.399+01:00  INFO 7947 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
-2023-12-29T01:20:47.419+01:00  INFO 7947 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-29T01:20:47.463+01:00  INFO 7947 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-29T01:20:47.478+01:00  INFO 7947 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-29T01:20:47.555+01:00  WARN 7947 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-29T01:20:47.611+01:00  INFO 7947 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@723c7f2f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cb077e3, org.springframework.security.web.context.SecurityContextHolderFilter@2f9404a7, org.springframework.security.web.header.HeaderWriterFilter@5b0bfe86, org.springframework.security.web.authentication.logout.LogoutFilter@54c543a5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@c1add62, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@273cefd5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2347ca7a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@278758da, org.springframework.security.web.session.SessionManagementFilter@39383f9c, org.springframework.security.web.access.ExceptionTranslationFilter@3dd6aede, org.springframework.security.web.access.intercept.AuthorizationFilter@9ce4057]
-2023-12-29T01:20:47.662+01:00  INFO 7947 --- [    Test worker] c.e.s.ServiceTests.ProductServiceTest    : Started ProductServiceTest in 0.428 seconds (process running for 9.911)
-2023-12-29T01:20:47.665+01:00  INFO 7947 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
-2023-12-29T01:20:47.987+01:00  INFO 7947 --- [    Test worker] c.e.serverjava.Service.ProductService    : getting product with id 1
+2023-12-29T03:53:03.395+01:00  INFO 4460 --- [    Test worker] c.e.s.ServiceTests.ProductServiceTest    : Starting ProductServiceTest using Java 17.0.9 with PID 4460 (started by bar in /home/bar/FIT/java-server)
+2023-12-29T03:53:03.396+01:00  INFO 4460 --- [    Test worker] c.e.s.ServiceTests.ProductServiceTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-12-29T03:53:03.493+01:00  INFO 4460 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-29T03:53:03.500+01:00  INFO 4460 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
+2023-12-29T03:53:03.564+01:00  INFO 4460 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-29T03:53:03.568+01:00  INFO 4460 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-29T03:53:03.568+01:00  INFO 4460 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-29T03:53:03.569+01:00  INFO 4460 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-12-29T03:53:03.570+01:00  INFO 4460 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection conn61: url=jdbc:h2:mem:testdb user=SA
+2023-12-29T03:53:03.571+01:00  INFO 4460 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-12-29T03:53:03.590+01:00  INFO 4460 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-29T03:53:03.629+01:00  INFO 4460 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-29T03:53:03.643+01:00  INFO 4460 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-29T03:53:03.709+01:00  WARN 4460 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-29T03:53:03.743+01:00  INFO 4460 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5dc9cb99, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15cd990c, org.springframework.security.web.context.SecurityContextHolderFilter@3328d00b, org.springframework.security.web.header.HeaderWriterFilter@7d2c6085, org.springframework.security.web.authentication.logout.LogoutFilter@6c26a27e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4a5bc21, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e740f3c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30427a3f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e35c8b5, org.springframework.security.web.session.SessionManagementFilter@6c78ad08, org.springframework.security.web.access.ExceptionTranslationFilter@278758da, org.springframework.security.web.access.intercept.AuthorizationFilter@411550d0]
+2023-12-29T03:53:03.774+01:00  INFO 4460 --- [    Test worker] c.e.s.ServiceTests.ProductServiceTest    : Started ProductServiceTest in 0.392 seconds (process running for 10.054)
+2023-12-29T03:53:03.777+01:00  INFO 4460 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
+2023-12-29T03:53:04.089+01:00  INFO 4460 --- [    Test worker] c.e.serverjava.Service.ProductService    : getting product with id 1
 </pre>
 </span>
 </div>
@@ -127,7 +127,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.2.1</a> at Dec 29, 2023, 1:20:48 AM</p>
+<a href="http://www.gradle.org">Gradle 8.2.1</a> at Dec 29, 2023, 3:53:05 AM</p>
 </div>
 </div>
 </body>

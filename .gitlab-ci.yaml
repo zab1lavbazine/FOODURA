@@ -1,0 +1,18 @@
+stages:
+  - prepare
+  - build
+
+prepare:
+  stage: prepare
+  script:
+    - ./gradlew clean assemble
+
+test:
+  stage: prepare
+  script:
+    - ./gradlew test
+
+build_app:
+  stage: build
+  script:
+    - ./gradlew build
