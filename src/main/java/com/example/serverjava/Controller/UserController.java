@@ -107,13 +107,13 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserLoginData userLoginData) {
-        boolean check = userService.login(userLoginData);
+        User user = userService.login(userLoginData);
 
-        if (!check) {
+        if (user == null) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("Wrong password or email");
         } else {
-            return ResponseEntity.ok("Logged in");
+            return ResponseEntity.ok(user);
         }
     }
 

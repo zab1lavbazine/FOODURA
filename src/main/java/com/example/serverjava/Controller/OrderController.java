@@ -50,6 +50,18 @@ public class OrderController {
         }
     }
 
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<?> getOrderByUserId(@PathVariable Long userId) {
+        Order order = orderService.getOrderByUserId(userId);
+        if (order != null) {
+            return ResponseEntity.ok(order);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Order not found");
+        }
+    }
+
     @DeleteMapping("/product/{productId}/order/{orderId}")
     public ResponseEntity<String> deleteProductByIdFromOrder(@PathVariable Long productId, @PathVariable Long orderId) {
         orderService.deleteProductByIdFromOrder(productId, orderId);

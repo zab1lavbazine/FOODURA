@@ -33,11 +33,14 @@ public class UserService {
     }
 
 
-    public boolean login(UserLoginData userLoginData){
+    public User login(UserLoginData userLoginData){
         User user = getUserByEmail(userLoginData.getEmail());
-        if (user == null) return false;
+        if (user == null) return null;
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        return passwordEncoder.matches(userLoginData.getPassword(), user.getPassword());
+        if (passwordEncoder.matches(userLoginData.getPassword(), user.getPassword())) {
+            return user;
+        }
+        return null;
     }
 
     public User getUserById(Long id) {
