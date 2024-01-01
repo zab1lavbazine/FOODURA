@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.052s</div>
+<div class="counter">0.083s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">testDeleteEmptyOrders()</td>
-<td class="success">0.042s</td>
+<td class="success">0.064s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetOrderById()</td>
-<td class="success">0.010s</td>
+<td class="success">0.019s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,8 +92,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-12-29T20:51:53.928+01:00  INFO 28648 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-12-29T20:51:53.937+01:00  INFO 28648 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.OrderRepositoryTest
+<pre>2024-01-01T19:40:37.211+01:00  INFO 2771 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-01T19:40:37.246+01:00  INFO 2771 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.OrderRepositoryTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -103,17 +103,17 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-2023-12-29T20:51:53.949+01:00  INFO 28648 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Starting OrderRepositoryTest using Java 17.0.9 with PID 28648 (started by bar in /home/bar/FIT/java-server)
-2023-12-29T20:51:53.949+01:00  INFO 28648 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-12-29T20:51:53.986+01:00  INFO 28648 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-29T20:51:53.991+01:00  INFO 28648 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 3 JPA repository interfaces.
-2023-12-29T20:51:53.997+01:00  INFO 28648 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2023-12-29T20:51:54.014+01:00  INFO 28648 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:7f3015da-da0a-4f63-9e72-7682d9e26e2f;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2023-12-29T20:51:54.025+01:00  INFO 28648 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-29T20:51:54.028+01:00  INFO 28648 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-29T20:51:54.028+01:00  INFO 28648 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-12-29T20:51:54.041+01:00  INFO 28648 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-29T20:51:54.066+01:00  INFO 28648 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-01T19:40:37.261+01:00  INFO 2771 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Starting OrderRepositoryTest using Java 17.0.9 with PID 2771 (started by bareldan in /home/bareldan/FIT/java-server)
+2024-01-01T19:40:37.262+01:00  INFO 2771 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-01-01T19:40:37.340+01:00  INFO 2771 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-01T19:40:37.346+01:00  INFO 2771 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 3 JPA repository interfaces.
+2024-01-01T19:40:37.357+01:00  INFO 2771 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-01-01T19:40:37.383+01:00  INFO 2771 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:fdb7ebf4-4aac-4949-8a39-b57628afe657;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-01-01T19:40:37.402+01:00  INFO 2771 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-01T19:40:37.406+01:00  INFO 2771 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-01-01T19:40:37.407+01:00  INFO 2771 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-01T19:40:37.425+01:00  INFO 2771 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-01-01T19:40:37.482+01:00  INFO 2771 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 Hibernate: drop table if exists order_product cascade 
 Hibernate: drop table if exists order_status cascade 
 Hibernate: drop table if exists orders cascade 
@@ -137,8 +137,8 @@ Hibernate: alter table if exists order_product add constraint FKl5mnj9n0di7k1v90
 Hibernate: alter table if exists order_status add constraint FK48efngdcgl1e9tkfbcalk35gl foreign key (order_id) references orders
 Hibernate: alter table if exists orders add constraint FK32ql8ubntj5uh44ph9659tiih foreign key (user_id) references users
 Hibernate: alter table if exists user_role add constraint FKj345gk1bovqvfame88rcx7yyx foreign key (user_id) references users
-2023-12-29T20:51:54.078+01:00  INFO 28648 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-29T20:51:54.156+01:00  INFO 28648 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Started OrderRepositoryTest in 0.216 seconds (process running for 7.462)
+2024-01-01T19:40:37.505+01:00  INFO 2771 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01T19:40:37.583+01:00  INFO 2771 --- [    Test worker] c.e.s.R.OrderRepositoryTest              : Started OrderRepositoryTest in 0.334 seconds (process running for 11.643)
 Hibernate: select o1_0.id,o1_0.address,o1_0.notion,s1_0.order_id,s1_0.statuses,u1_0.id,u1_0.active,u1_0.email,u1_0.password,u1_0.phone_number,r1_0.user_id,r1_0.roles,u1_0.username from orders o1_0 left join order_status s1_0 on o1_0.id=s1_0.order_id left join users u1_0 on u1_0.id=o1_0.user_id left join user_role r1_0 on u1_0.id=r1_0.user_id where o1_0.id=?
 Hibernate: select next value for orders_seq
 Hibernate: insert into orders (address,notion,user_id,id) values (?,?,?,?)
@@ -163,7 +163,7 @@ Hibernate: select next value for products_seq
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.2.1</a> at Dec 29, 2023, 8:51:56 PM</p>
+<a href="http://www.gradle.org">Gradle 8.2.1</a> at Jan 1, 2024, 7:40:40 PM</p>
 </div>
 </div>
 </body>
