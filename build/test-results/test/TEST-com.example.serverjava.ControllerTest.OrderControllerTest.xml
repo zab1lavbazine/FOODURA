@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.serverjava.ControllerTest.OrderControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-01-01T18:40:33" hostname="DESKTOP-D5705G5" time="0.077">
+<testsuite name="com.example.serverjava.ControllerTest.OrderControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-01-01T20:15:17" hostname="DESKTOP-D5705G5" time="0.067">
   <properties/>
-  <testcase name="changeOrder()" classname="com.example.serverjava.ControllerTest.OrderControllerTest" time="0.055"/>
-  <testcase name="getOrderById()" classname="com.example.serverjava.ControllerTest.OrderControllerTest" time="0.012"/>
-  <testcase name="testGetAllOrders()" classname="com.example.serverjava.ControllerTest.OrderControllerTest" time="0.006"/>
-  <system-out><![CDATA[19:40:26.850 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.serverjava.ControllerTest.OrderControllerTest]: OrderControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:40:26.962 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ControllerTest.OrderControllerTest
+  <testcase name="changeOrder()" classname="com.example.serverjava.ControllerTest.OrderControllerTest" time="0.048"/>
+  <testcase name="getOrderById()" classname="com.example.serverjava.ControllerTest.OrderControllerTest" time="0.01"/>
+  <testcase name="testGetAllOrders()" classname="com.example.serverjava.ControllerTest.OrderControllerTest" time="0.004"/>
+  <system-out><![CDATA[21:15:12.934 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.serverjava.ControllerTest.OrderControllerTest]: OrderControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:15:13.021 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ControllerTest.OrderControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -15,31 +15,31 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-2024-01-01T19:40:27.329+01:00  INFO 2771 --- [    Test worker] c.e.s.C.OrderControllerTest              : Starting OrderControllerTest using Java 17.0.9 with PID 2771 (started by bareldan in /home/bareldan/FIT/java-server)
-2024-01-01T19:40:27.331+01:00  INFO 2771 --- [    Test worker] c.e.s.C.OrderControllerTest              : No active profile set, falling back to 1 default profile: "default"
-2024-01-01T19:40:28.029+01:00  INFO 2771 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-01T19:40:28.119+01:00  INFO 2771 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 3 JPA repository interfaces.
-2024-01-01T19:40:29.817+01:00  INFO 2771 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-01T19:40:29.888+01:00  INFO 2771 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
-2024-01-01T19:40:29.891+01:00  INFO 2771 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-01-01T19:40:30.088+01:00  INFO 2771 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-01T19:40:30.095+01:00  INFO 2771 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-01T19:40:30.116+01:00  INFO 2771 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-01T19:40:30.341+01:00  INFO 2771 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2024-01-01T19:40:30.344+01:00  INFO 2771 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-01T19:40:30.701+01:00  INFO 2771 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-01T19:40:31.316+01:00  INFO 2771 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-01T19:40:31.412+01:00  INFO 2771 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-01T19:40:31.930+01:00  WARN 2771 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-01T19:40:32.295+01:00  WARN 2771 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+2024-01-01T21:15:13.275+01:00  INFO 27280 --- [    Test worker] c.e.s.C.OrderControllerTest              : Starting OrderControllerTest using Java 17.0.9 with PID 27280 (started by bareldan in /home/bareldan/FIT/java-server)
+2024-01-01T21:15:13.277+01:00  INFO 27280 --- [    Test worker] c.e.s.C.OrderControllerTest              : No active profile set, falling back to 1 default profile: "default"
+2024-01-01T21:15:13.836+01:00  INFO 27280 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-01T21:15:13.899+01:00  INFO 27280 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2024-01-01T21:15:15.250+01:00  INFO 27280 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-01T21:15:15.292+01:00  INFO 27280 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2024-01-01T21:15:15.295+01:00  INFO 27280 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-01-01T21:15:15.418+01:00  INFO 27280 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-01-01T21:15:15.427+01:00  INFO 27280 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-01T21:15:15.446+01:00  INFO 27280 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-01T21:15:15.591+01:00  INFO 27280 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-01-01T21:15:15.593+01:00  INFO 27280 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-01T21:15:15.886+01:00  INFO 27280 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-01-01T21:15:16.380+01:00  INFO 27280 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-01T21:15:16.434+01:00  INFO 27280 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01T21:15:16.819+01:00  WARN 27280 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-01T21:15:17.086+01:00  WARN 27280 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 6445fd8b-eb6f-4196-8032-d6a64ed3ba2b
+Using generated security password: 0c98b5de-de46-4da8-987e-ae20f0c80d57
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2024-01-01T19:40:32.447+01:00  INFO 2771 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@440e2406, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56adb75e, org.springframework.security.web.context.SecurityContextHolderFilter@315bb2bb, org.springframework.security.web.header.HeaderWriterFilter@32192a69, org.springframework.security.web.authentication.logout.LogoutFilter@2aadeb31, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3509f32d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c9015c6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b6d8671, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2cc7b63d, org.springframework.security.web.session.SessionManagementFilter@309ac89e, org.springframework.security.web.access.ExceptionTranslationFilter@16c3388e, org.springframework.security.web.access.intercept.AuthorizationFilter@96271d8]
-2024-01-01T19:40:32.767+01:00  INFO 2771 --- [    Test worker] c.e.s.C.OrderControllerTest              : Started OrderControllerTest in 5.652 seconds (process running for 6.826)
-2024-01-01T19:40:32.920+01:00  INFO 2771 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
+2024-01-01T21:15:17.207+01:00  INFO 27280 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f9a5d3b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@440e2406, org.springframework.security.web.context.SecurityContextHolderFilter@354ff4f6, org.springframework.security.web.header.HeaderWriterFilter@2fad50f2, org.springframework.security.web.authentication.logout.LogoutFilter@24673720, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2726b2f3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57e35236, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17af9f67, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56adb75e, org.springframework.security.web.session.SessionManagementFilter@b91e024, org.springframework.security.web.access.ExceptionTranslationFilter@38320819, org.springframework.security.web.access.intercept.AuthorizationFilter@36109a76]
+2024-01-01T21:15:17.405+01:00  INFO 27280 --- [    Test worker] c.e.s.C.OrderControllerTest              : Started OrderControllerTest in 4.287 seconds (process running for 5.165)
+2024-01-01T21:15:17.539+01:00  INFO 27280 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

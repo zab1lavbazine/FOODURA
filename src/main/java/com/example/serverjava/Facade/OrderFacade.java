@@ -1,6 +1,5 @@
 package com.example.serverjava.Facade;
 
-
 import com.example.serverjava.DTO.OrderINFO;
 import com.example.serverjava.DTO.ProductINFO;
 import com.example.serverjava.DTO.UserINFO;
@@ -27,7 +26,6 @@ public class OrderFacade {
     private final ProductService productService;
     private final UserService userService;
 
-
     @Transactional
     public void createNewOrder(OrderWithProductsRequest request) {
 
@@ -53,7 +51,6 @@ public class OrderFacade {
         }
     }
 
-
     private Order checkForExistingOrderForUser(Long userId) {
         return orderService.getOrderByUserId(userId);
     }
@@ -65,14 +62,11 @@ public class OrderFacade {
         }
         log.info("Editing order with id {}", id);
         Order order = orderService.getOrderById(id);
-        User user = userService.getUserById(request.getUserId());
-        order.setUser(user);
         order.setAddress(request.getAddress());
         order.setNotion(request.getNotion());
         order.setProducts(productService.getAllProductsById(request.getProductIds()));
         orderService.updateOrder(order);
     }
-
 
     public void deleteOrder(Long id) {
         log.info("Deleting order with id {}", id);
@@ -87,7 +81,6 @@ public class OrderFacade {
     public List<OrderINFO> getAllOrdersDTO() throws IOException {
         List<Order> orderList = orderService.getAllOrders();
         List<OrderINFO> orderDTOList = new ArrayList<>();
-
 
         for (Order order : orderList) {
             OrderINFO orderDTO = new OrderINFO(order.getId(), order.getNotion(), order.getAddress());
@@ -109,7 +102,8 @@ public class OrderFacade {
         List<Order> orderList = product.getOrders();
         for (Order order : orderList) {
             List<Product> productList = order.getProducts();
-            if (productList == null) continue;
+            if (productList == null)
+                continue;
             productList.removeIf(product1 -> product1.getId().equals(product.getId()));
             if (productList.isEmpty()) {
                 orderService.deleteOrderByUser(order.getUser());

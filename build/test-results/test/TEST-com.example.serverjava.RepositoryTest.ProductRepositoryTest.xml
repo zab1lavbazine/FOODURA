@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.serverjava.RepositoryTest.ProductRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-01T18:40:37" hostname="DESKTOP-D5705G5" time="0.023">
+<testsuite name="com.example.serverjava.RepositoryTest.ProductRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-01T20:15:21" hostname="DESKTOP-D5705G5" time="0.017">
   <properties/>
-  <testcase name="testFindId()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.01"/>
-  <testcase name="testSaveNewProduct()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.011"/>
-  <system-out><![CDATA[2024-01-01T19:40:37.675+01:00  INFO 2771 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-01T19:40:37.681+01:00  INFO 2771 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.ProductRepositoryTest
+  <testcase name="testFindId()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.009"/>
+  <testcase name="testSaveNewProduct()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.007"/>
+  <system-out><![CDATA[2024-01-01T21:15:21.666+01:00  INFO 27280 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-01T21:15:21.672+01:00  INFO 27280 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.ProductRepositoryTest
 Hibernate: select p1_0.id,p1_0.description,p1_0.name,p1_0.price from products p1_0 where p1_0.id=?
 Hibernate: select p1_0.id,p1_0.description,p1_0.name,p1_0.price from products p1_0 where p1_0.id=?
 ]]></system-out>

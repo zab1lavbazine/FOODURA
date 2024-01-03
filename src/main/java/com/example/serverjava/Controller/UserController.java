@@ -8,7 +8,6 @@ import com.example.serverjava.Service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -125,6 +124,17 @@ public class UserController {
                     .body("User not found");
         } else {
             return ResponseEntity.ok("User is updated");
+        }
+    }
+
+    @GetMapping("/product/{productId}")
+    public ResponseEntity<?> getAllUsersContainingProductInOrder(@PathVariable Long productId) {
+        List<UserINFO> users = userFacade.findAllUsersContainingProductInOrder(productId);
+        if (users != null) {
+            return ResponseEntity.ok(users);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("list is empty");
         }
     }
 

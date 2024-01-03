@@ -2,6 +2,7 @@ package com.example.serverjava.Service;
 
 import com.example.serverjava.DTO.UserINFO;
 import com.example.serverjava.Entity.Order;
+import com.example.serverjava.Entity.Product;
 import com.example.serverjava.Entity.Enum.Role;
 import com.example.serverjava.Entity.SupportEntity.UserLoginData;
 import com.example.serverjava.Entity.User;
@@ -25,17 +26,16 @@ public class UserService {
         return userRepository.findAll();
     }
 
-
     public List<UserINFO> getAllUsersDTO() {
         log.info("Getting all users from the database");
         List<User> userList = userRepository.findAll();
         return UserINFO.from(userList);
     }
 
-
-    public User login(UserLoginData userLoginData){
+    public User login(UserLoginData userLoginData) {
         User user = getUserByEmail(userLoginData.getEmail());
-        if (user == null) return null;
+        if (user == null)
+            return null;
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         if (passwordEncoder.matches(userLoginData.getPassword(), user.getPassword())) {
             return user;
@@ -48,10 +48,10 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-
     public boolean editUserWithDTO(UserINFO user, Long id) {
         User userFromDB = getUserById(id);
-        if (userFromDB == null) return false;
+        if (userFromDB == null)
+            return false;
         userFromDB.setUsername(user.getUsername());
         userFromDB.setPhoneNumber(user.getPhoneNumber());
         userRepository.save(userFromDB);
@@ -59,24 +59,24 @@ public class UserService {
         return true;
     }
 
-
     public List<User> getAllAdmins() {
         Optional<List<User>> admins = userRepository.findAllByRolesIn(Set.of(Role.ADMIN));
         return admins.orElse(null);
     }
 
-
     public void deleteUserById(Long id) {
         User user = getUserById(id);
-        if (user == null) return;
+        if (user == null)
+            return;
         userRepository.delete(user);
         log.info("user is deleted id : {}", user.getId());
     }
 
     public boolean saveNewUser(User user) {
         String email = user.getEmail();
-        //check if user with this email already exists
-        if (userRepository.findByEmail(email).isPresent()) return false;
+        // check if user with this email already exists
+        if (userRepository.findByEmail(email).isPresent())
+            return false;
         //
 
         user.setActive(true);
@@ -96,7 +96,8 @@ public class UserService {
     public boolean saveNewAdmin(User user) {
         String email = user.getEmail();
 
-        if (userRepository.findByEmail(email).isPresent()) return false;
+        if (userRepository.findByEmail(email).isPresent())
+            return false;
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setActive(true);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -135,4 +136,9 @@ public class UserService {
         newAdmin.setPassword(user.getPassword());
         return saveNewAdmin(newAdmin);
     }
+
+    public List<User> getAllUsersContainingProductInOrder(Product product) {
+        return userRepository.findUsersWithProductsInOrders(product.getName());
+    }
+
 }
