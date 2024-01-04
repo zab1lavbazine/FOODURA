@@ -6,6 +6,7 @@ import com.example.serverjava.Entity.Product;
 import com.example.serverjava.Repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,6 +26,10 @@ public class ProductService {
     public void addProduct(Product product) {
         log.info("adding new product : " + product.getName());
         productRepository.save(product);
+    }
+
+    public Product getProductByName(String productName) {
+        return productRepository.findByName(productName);
     }
 
     public Product getProductById(Long id) {
@@ -68,5 +73,10 @@ public class ProductService {
         for (Product product : products) {
             product.getOrders().remove(order);
         }
+    }
+
+    public List<Product> getAllProductsByName(String productName) {
+        log.info("getting all products by name");
+        return productRepository.findAllByName(productName).orElse(null);
     }
 }

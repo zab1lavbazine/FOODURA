@@ -6,12 +6,15 @@ import com.example.serverjava.Entity.SupportEntity.UserLoginData;
 import com.example.serverjava.Facade.UserFacade;
 import com.example.serverjava.Service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/user")
@@ -127,14 +130,14 @@ public class UserController {
         }
     }
 
-    @GetMapping("/product/{productId}")
-    public ResponseEntity<?> getAllUsersContainingProductInOrder(@PathVariable Long productId) {
-        List<UserINFO> users = userFacade.findAllUsersContainingProductInOrder(productId);
-        if (users != null) {
+    @GetMapping("/product/{productName}")
+    public ResponseEntity<?> getAllUsersContainingProductInOrder(@PathVariable String productName) {
+        List<UserINFO> users = userFacade.findAllUsersContainingProductInOrder(productName);
+        if (users != null && !users.isEmpty()) {
             return ResponseEntity.ok(users);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("list is empty");
+                    .body("No users found for the specified product");
         }
     }
 

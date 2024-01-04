@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">testGetOrderById()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetOrderByUserId()</td>
-<td class="success">0.004s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,8 +92,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2024-01-01T21:15:21.726+01:00  INFO 27280 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ServiceTests.OrderServiceTest]: OrderServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-01T21:15:21.730+01:00  INFO 27280 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ServiceTests.OrderServiceTest
+<pre>2024-01-03T23:50:55.008+01:00  INFO 21446 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ServiceTests.OrderServiceTest]: OrderServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-03T23:50:55.013+01:00  INFO 21446 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ServiceTests.OrderServiceTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -103,31 +103,31 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-2024-01-01T21:15:21.744+01:00  INFO 27280 --- [    Test worker] c.e.s.ServiceTests.OrderServiceTest      : Starting OrderServiceTest using Java 17.0.9 with PID 27280 (started by bareldan in /home/bareldan/FIT/java-server)
-2024-01-01T21:15:21.744+01:00  INFO 27280 --- [    Test worker] c.e.s.ServiceTests.OrderServiceTest      : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-01-01T21:15:21.821+01:00  INFO 27280 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-01T21:15:21.828+01:00  INFO 27280 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
-2024-01-01T21:15:21.899+01:00  INFO 27280 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-01T21:15:21.902+01:00  INFO 27280 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-01T21:15:21.902+01:00  INFO 27280 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-01T21:15:21.903+01:00  INFO 27280 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
-2024-01-01T21:15:21.904+01:00  INFO 27280 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection conn51: url=jdbc:h2:mem:testdb user=SA
-2024-01-01T21:15:21.904+01:00  INFO 27280 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
-2024-01-01T21:15:21.923+01:00  INFO 27280 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-01T21:15:21.960+01:00  INFO 27280 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-01T21:15:21.974+01:00  INFO 27280 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-01T21:15:22.041+01:00  WARN 27280 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-01T21:15:22.090+01:00  WARN 27280 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+2024-01-03T23:50:55.030+01:00  INFO 21446 --- [    Test worker] c.e.s.ServiceTests.OrderServiceTest      : Starting OrderServiceTest using Java 17.0.9 with PID 21446 (started by bareldan in /home/bareldan/FIT/java-server)
+2024-01-03T23:50:55.030+01:00  INFO 21446 --- [    Test worker] c.e.s.ServiceTests.OrderServiceTest      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-01-03T23:50:55.128+01:00  INFO 21446 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-03T23:50:55.136+01:00  INFO 21446 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2024-01-03T23:50:55.201+01:00  INFO 21446 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-03T23:50:55.205+01:00  INFO 21446 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-01-03T23:50:55.205+01:00  INFO 21446 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-03T23:50:55.206+01:00  INFO 21446 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-01-03T23:50:55.207+01:00  INFO 21446 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection conn51: url=jdbc:h2:mem:testdb user=SA
+2024-01-03T23:50:55.207+01:00  INFO 21446 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-01-03T23:50:55.231+01:00  INFO 21446 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-01-03T23:50:55.275+01:00  INFO 21446 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-03T23:50:55.289+01:00  INFO 21446 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-03T23:50:55.367+01:00  WARN 21446 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-03T23:50:55.418+01:00  WARN 21446 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 17071042-ce00-4fcf-a031-c394764f927f
+Using generated security password: 2e50744f-5354-4fbe-9360-73a9de8e7ac2
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2024-01-01T21:15:22.106+01:00  INFO 27280 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@15652e7e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a83be9, org.springframework.security.web.context.SecurityContextHolderFilter@4be2f788, org.springframework.security.web.header.HeaderWriterFilter@431ac922, org.springframework.security.web.authentication.logout.LogoutFilter@7f77131b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@524d00e7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f39afe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1435103b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a9781fd, org.springframework.security.web.session.SessionManagementFilter@70a8ebfc, org.springframework.security.web.access.ExceptionTranslationFilter@5ee29735, org.springframework.security.web.access.intercept.AuthorizationFilter@5e4632cb]
-2024-01-01T21:15:22.160+01:00  INFO 27280 --- [    Test worker] c.e.s.ServiceTests.OrderServiceTest      : Started OrderServiceTest in 0.427 seconds (process running for 9.921)
-2024-01-01T21:15:22.166+01:00  INFO 27280 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
-2024-01-01T21:15:22.513+01:00  INFO 27280 --- [    Test worker] c.e.serverjava.Service.OrderService      : Getting order with id 1 from the database
-2024-01-01T21:15:22.518+01:00  INFO 27280 --- [    Test worker] c.e.serverjava.Service.OrderService      : Getting order with user id 1 from the database
+2024-01-03T23:50:55.430+01:00  INFO 21446 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@598ad90e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@772739ee, org.springframework.security.web.context.SecurityContextHolderFilter@7c532e54, org.springframework.security.web.header.HeaderWriterFilter@2b831846, org.springframework.security.web.authentication.logout.LogoutFilter@39a2973d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@74bca3db, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17163282, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2464490e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f406ea2, org.springframework.security.web.session.SessionManagementFilter@139d7ced, org.springframework.security.web.access.ExceptionTranslationFilter@4605a571, org.springframework.security.web.access.intercept.AuthorizationFilter@19ac267e]
+2024-01-03T23:50:55.473+01:00  INFO 21446 --- [    Test worker] c.e.s.ServiceTests.OrderServiceTest      : Started OrderServiceTest in 0.456 seconds (process running for 11.508)
+2024-01-03T23:50:55.479+01:00  INFO 21446 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
+2024-01-03T23:50:55.821+01:00  INFO 21446 --- [    Test worker] c.e.serverjava.Service.OrderService      : Getting order with id 1 from the database
+2024-01-03T23:50:55.826+01:00  INFO 21446 --- [    Test worker] c.e.serverjava.Service.OrderService      : Getting order with user id 1 from the database
 </pre>
 </span>
 </div>
@@ -139,7 +139,7 @@ This generated password is for development use only. Your security configuration
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.2.1</a> at Jan 1, 2024, 9:15:24 PM</p>
+<a href="http://www.gradle.org">Gradle 8.2.1</a> at Jan 3, 2024, 11:50:57 PM</p>
 </div>
 </div>
 </body>

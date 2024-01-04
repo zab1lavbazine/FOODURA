@@ -1,19 +1,21 @@
 package com.example.serverjava.Facade;
 
 import com.example.serverjava.DTO.UserINFO;
+import com.example.serverjava.Entity.Order;
 import com.example.serverjava.Entity.Product;
 import com.example.serverjava.Entity.User;
-import com.example.serverjava.Repository.OrderRepository;
-import com.example.serverjava.Repository.UserRepository;
 import com.example.serverjava.Service.OrderService;
 import com.example.serverjava.Service.ProductService;
 import com.example.serverjava.Service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserFacade {
@@ -32,14 +34,17 @@ public class UserFacade {
         return true;
     }
 
-    public List<UserINFO> findAllUsersContainingProductInOrder(Long productId) {
-        Product product = productService.getProductById(productId);
-        if (product == null)
-            return null;
-        List<User> userList = userService.getAllUsersContainingProductInOrder(product);
-        // make UserInfo from User
-        List<UserINFO> userINFOList = UserINFO.from(userList);
-        return userINFOList;
+    public List<UserINFO> findAllUsersContainingProductInOrder(String productName) {
+        Product product = productService.getProductByName(productName);
+        List<Order> orders = orderService.getAllOrdersContainingProduct(product);
+        log.info("all orders getted");
+        List<User> users = new ArrayList<>();
+
+        for (Order order : orders) {
+            users.add(order.getUser());
+        }
+
+        return UserINFO.from(users);
     }
 
 }

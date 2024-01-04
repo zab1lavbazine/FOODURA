@@ -137,8 +137,8 @@ public class UserService {
         return saveNewAdmin(newAdmin);
     }
 
-    public List<User> getAllUsersContainingProductInOrder(Product product) {
-        return userRepository.findUsersWithProductsInOrders(product.getName());
+    public List<User> getAllUsersContainingProductInOrder(String name) {
+        return userRepository.findUsersWithProductsInOrders(name);
     }
 
 }
