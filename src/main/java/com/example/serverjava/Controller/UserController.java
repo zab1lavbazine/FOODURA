@@ -132,7 +132,7 @@ public class UserController {
 
     @GetMapping("/product/{productName}")
     public ResponseEntity<?> getAllUsersContainingProductInOrder(@PathVariable String productName) {
-        List<UserINFO> users = userFacade.findAllUsersContainingProductInOrder(productName);
+        List<User> users = userFacade.findAllUsersContainingProductInOrder(productName);
         if (users != null && !users.isEmpty()) {
             return ResponseEntity.ok(users);
         } else {

@@ -34,7 +34,7 @@ public class UserFacade {
         return true;
     }
 
-    public List<UserINFO> findAllUsersContainingProductInOrder(String productName) {
+    public List<User> findAllUsersContainingProductInOrder(String productName) {
         Product product = productService.getProductByName(productName);
         List<Order> orders = orderService.getAllOrdersContainingProduct(product);
         log.info("all orders getted");
@@ -44,7 +44,7 @@ public class UserFacade {
             users.add(order.getUser());
         }
 
-        return UserINFO.from(users);
+        return users;
     }
 
 }
