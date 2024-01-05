@@ -68,6 +68,7 @@ public class OrderFacade {
         orderService.updateOrder(order);
     }
 
+    @Transactional
     public void deleteOrder(Long id) {
         log.info("Deleting order with id {}", id);
         Order order = orderService.getOrderById(id);

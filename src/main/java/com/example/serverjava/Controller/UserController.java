@@ -6,7 +6,6 @@ import com.example.serverjava.Entity.SupportEntity.UserLoginData;
 import com.example.serverjava.Facade.UserFacade;
 import com.example.serverjava.Service.UserService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/user")
@@ -132,7 +130,7 @@ public class UserController {
 
     @GetMapping("/product/{productName}")
     public ResponseEntity<?> getAllUsersContainingProductInOrder(@PathVariable String productName) {
-        List<User> users = userFacade.findAllUsersContainingProductInOrder(productName);
+        List<UserINFO> users = userFacade.findAllUsersContainingProductInOrder(productName);
         if (users != null && !users.isEmpty()) {
             return ResponseEntity.ok(users);
         } else {
