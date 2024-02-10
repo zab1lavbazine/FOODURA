@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.serverjava.RepositoryTest.UserRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-03T22:50:54" hostname="DESKTOP-D5705G5" time="0.03">
+<testsuite name="com.example.serverjava.RepositoryTest.UserRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-13T16:12:26" hostname="DESKTOP-D5705G5" time="0.032">
   <properties/>
-  <testcase name="testFindUserById()" classname="com.example.serverjava.RepositoryTest.UserRepositoryTest" time="0.01"/>
-  <testcase name="testFindUserByEmail()" classname="com.example.serverjava.RepositoryTest.UserRepositoryTest" time="0.019"/>
-  <system-out><![CDATA[2024-01-03T23:50:54.968+01:00  INFO 21446 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-03T23:50:54.972+01:00  INFO 21446 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.UserRepositoryTest
+  <testcase name="testFindUserById()" classname="com.example.serverjava.RepositoryTest.UserRepositoryTest" time="0.008"/>
+  <testcase name="testFindUserByEmail()" classname="com.example.serverjava.RepositoryTest.UserRepositoryTest" time="0.023"/>
+  <system-out><![CDATA[2024-01-13T17:12:26.081+01:00  INFO 3400 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-13T17:12:26.085+01:00  INFO 3400 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.UserRepositoryTest
 Hibernate: select u1_0.id,u1_0.active,u1_0.email,u1_0.password,u1_0.phone_number,r1_0.user_id,r1_0.roles,u1_0.username from users u1_0 left join user_role r1_0 on u1_0.id=r1_0.user_id where u1_0.id=?
 Hibernate: select next value for users_seq
 Hibernate: select u1_0.id,u1_0.active,u1_0.email,u1_0.password,u1_0.phone_number,r1_0.user_id,r1_0.roles,u1_0.username from users u1_0 left join user_role r1_0 on u1_0.id=r1_0.user_id where u1_0.id=?

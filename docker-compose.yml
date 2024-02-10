@@ -10,14 +10,27 @@ services:
       - POSTGRES_DB=bareldan
     ports:
       - '5432:5432'
+    networks:
+      - testing
 
   spring-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        - APP_DIR=/app  # Pass the app directory as an argument
+    image: server-java-spring-app
     ports:
       - '8080:8080'
     depends_on:
       - postgres
+    networks:
+      - testing
+
+  svelte-client:
+    image: svelte
+    ports:
+      - '5173:5173'
+    depends_on:
+      - spring-app
+    networks:
+      - testing
+
+networks:
+  testing:
+    driver: bridge
