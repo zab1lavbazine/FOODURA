@@ -1,9 +1,0 @@
-stages:
-  - build
-  - test
-
-build-app-test:
-  stage: build
-  script:
-    - ./gradlew build
-    - ./gradlew test
