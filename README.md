@@ -1,6 +1,6 @@
-# Project Name
+# FOODURA
 
-**[Project Name]** - A Java Spring Boot project for order management
+**FOODURA** - A Java Spring Boot project for order management
 
 ## Table of Contents
 
