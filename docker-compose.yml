@@ -16,7 +16,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-       - APP_DIR=/app  
+        - APP_DIR=/app  # Pass the app directory as an argument
     ports:
       - '8080:8080'
     depends_on:

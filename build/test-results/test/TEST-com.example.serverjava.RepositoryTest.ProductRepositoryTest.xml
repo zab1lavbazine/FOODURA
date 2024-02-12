@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="com.example.serverjava.RepositoryTest.ProductRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-13T16:12:26" hostname="DESKTOP-D5705G5" time="0.018">
+<testsuite name="com.example.serverjava.RepositoryTest.ProductRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-12T23:15:28" hostname="DESKTOP-D5705G5" time="0.016">
   <properties/>
-  <testcase name="testFindId()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.01"/>
-  <testcase name="testSaveNewProduct()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.006"/>
-  <system-out><![CDATA[2024-01-13T17:12:26.051+01:00  INFO 3400 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-13T17:12:26.056+01:00  INFO 3400 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.ProductRepositoryTest
-=======
-<testsuite name="com.example.serverjava.RepositoryTest.ProductRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-07T13:44:50" hostname="bar-Latitude-3420" time="0.009">
-  <properties/>
-  <testcase name="testFindId()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.004"/>
-  <testcase name="testSaveNewProduct()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.004"/>
-  <system-out><![CDATA[2024-01-07T14:44:50.262+01:00  INFO 9789 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-07T14:44:50.265+01:00  INFO 9789 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.ProductRepositoryTest
->>>>>>> 43e7e0ec78c5acca5465a905c7d0915a6e65dab5
+  <testcase name="testFindId()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.008"/>
+  <testcase name="testSaveNewProduct()" classname="com.example.serverjava.RepositoryTest.ProductRepositoryTest" time="0.007"/>
+  <system-out><![CDATA[2024-02-13T00:15:28.667+01:00  INFO 29751 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.RepositoryTest.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-02-13T00:15:28.672+01:00  INFO 29751 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.RepositoryTest.ProductRepositoryTest
 Hibernate: select p1_0.id,p1_0.description,p1_0.name,p1_0.price from products p1_0 where p1_0.id=?
 Hibernate: select p1_0.id,p1_0.description,p1_0.name,p1_0.price from products p1_0 where p1_0.id=?
 ]]></system-out>

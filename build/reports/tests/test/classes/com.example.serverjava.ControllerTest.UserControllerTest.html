@@ -41,11 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<<<<<<< HEAD
-<div class="counter">0.014s</div>
-=======
-<div class="counter">0.008s</div>
->>>>>>> 43e7e0ec78c5acca5465a905c7d0915a6e65dab5
+<div class="counter">0.013s</div>
 <p>duration</p>
 </div>
 </td>
@@ -83,29 +79,17 @@
 </thead>
 <tr>
 <td class="success">testAddNewUser()</td>
-<<<<<<< HEAD
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetAllUsers()</td>
-=======
->>>>>>> 43e7e0ec78c5acca5465a905c7d0915a6e65dab5
 <td class="success">0.003s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetAllUsers()</td>
-<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetUserByEmail()</td>
-<<<<<<< HEAD
-<td class="success">0.007s</td>
-=======
-<td class="success">0.003s</td>
->>>>>>> 43e7e0ec78c5acca5465a905c7d0915a6e65dab5
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -113,13 +97,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<<<<<<< HEAD
-<pre>2024-01-13T17:12:23.051+01:00  INFO 3400 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ControllerTest.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-13T17:12:23.053+01:00  INFO 3400 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ControllerTest.UserControllerTest
-=======
-<pre>2024-01-07T14:44:49.271+01:00  INFO 9789 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ControllerTest.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-07T14:44:49.272+01:00  INFO 9789 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ControllerTest.UserControllerTest
->>>>>>> 43e7e0ec78c5acca5465a905c7d0915a6e65dab5
+<pre>2024-02-13T00:15:26.469+01:00  INFO 29751 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ControllerTest.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-02-13T00:15:26.471+01:00  INFO 29751 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ControllerTest.UserControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -129,55 +108,29 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-<<<<<<< HEAD
-2024-01-13T17:12:23.078+01:00  INFO 3400 --- [    Test worker] c.e.s.ControllerTest.UserControllerTest  : Starting UserControllerTest using Java 17.0.9 with PID 3400 (started by bareldan in /home/bareldan/FIT/java-server)
-2024-01-13T17:12:23.079+01:00  INFO 3400 --- [    Test worker] c.e.s.ControllerTest.UserControllerTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-01-13T17:12:23.252+01:00  INFO 3400 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-13T17:12:23.264+01:00  INFO 3400 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
-2024-01-13T17:12:23.532+01:00  INFO 3400 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-13T17:12:23.542+01:00  INFO 3400 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-13T17:12:23.543+01:00  INFO 3400 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-13T17:12:23.544+01:00  INFO 3400 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2024-01-13T17:12:23.546+01:00  INFO 3400 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:testdb user=SA
-2024-01-13T17:12:23.547+01:00  INFO 3400 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2024-01-13T17:12:23.576+01:00  INFO 3400 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-13T17:12:23.625+01:00  INFO 3400 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-13T17:12:23.641+01:00  INFO 3400 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-13T17:12:23.743+01:00  WARN 3400 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-13T17:12:23.800+01:00  WARN 3400 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+2024-02-13T00:15:26.492+01:00  INFO 29751 --- [    Test worker] c.e.s.ControllerTest.UserControllerTest  : Starting UserControllerTest using Java 17.0.9 with PID 29751 (started by bareldan in /home/bareldan/FOODURA)
+2024-02-13T00:15:26.492+01:00  INFO 29751 --- [    Test worker] c.e.s.ControllerTest.UserControllerTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-02-13T00:15:26.618+01:00  INFO 29751 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-13T00:15:26.626+01:00  INFO 29751 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
+2024-02-13T00:15:26.820+01:00  INFO 29751 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-13T00:15:26.826+01:00  INFO 29751 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-02-13T00:15:26.826+01:00  INFO 29751 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-13T00:15:26.827+01:00  INFO 29751 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-02-13T00:15:26.828+01:00  INFO 29751 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:testdb user=SA
+2024-02-13T00:15:26.829+01:00  INFO 29751 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-02-13T00:15:26.852+01:00  INFO 29751 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-02-13T00:15:26.894+01:00  INFO 29751 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-02-13T00:15:26.909+01:00  INFO 29751 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-13T00:15:27.000+01:00  WARN 29751 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-13T00:15:27.042+01:00  WARN 29751 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: eb444a9a-e38f-45e4-bb29-993e82d3291d
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2024-01-13T17:12:23.812+01:00  INFO 3400 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6671ec3b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24d02ed9, org.springframework.security.web.context.SecurityContextHolderFilter@11f2be38, org.springframework.security.web.header.HeaderWriterFilter@1069cbf2, org.springframework.security.web.authentication.logout.LogoutFilter@44bd4b94, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@483eff43, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4613274d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18fb5226, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6402f6b1, org.springframework.security.web.session.SessionManagementFilter@31ad368a, org.springframework.security.web.access.ExceptionTranslationFilter@1bd99de6, org.springframework.security.web.access.intercept.AuthorizationFilter@59632e3c]
-2024-01-13T17:12:23.871+01:00  INFO 3400 --- [    Test worker] c.e.s.ControllerTest.UserControllerTest  : Started UserControllerTest in 0.814 seconds (process running for 10.459)
-2024-01-13T17:12:23.873+01:00  INFO 3400 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
-=======
-2024-01-07T14:44:49.283+01:00  INFO 9789 --- [    Test worker] c.e.s.ControllerTest.UserControllerTest  : Starting UserControllerTest using Java 17.0.9 with PID 9789 (started by bar in /home/bar/FIT/java-server)
-2024-01-07T14:44:49.284+01:00  INFO 9789 --- [    Test worker] c.e.s.ControllerTest.UserControllerTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-01-07T14:44:49.372+01:00  INFO 9789 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-07T14:44:49.381+01:00  INFO 9789 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
-2024-01-07T14:44:49.500+01:00  INFO 9789 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-07T14:44:49.508+01:00  INFO 9789 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-07T14:44:49.508+01:00  INFO 9789 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-07T14:44:49.508+01:00  INFO 9789 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2024-01-07T14:44:49.509+01:00  INFO 9789 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:testdb user=SA
-2024-01-07T14:44:49.509+01:00  INFO 9789 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2024-01-07T14:44:49.520+01:00  INFO 9789 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-07T14:44:49.552+01:00  INFO 9789 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-07T14:44:49.566+01:00  INFO 9789 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-07T14:44:49.628+01:00  WARN 9789 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-07T14:44:49.659+01:00  WARN 9789 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 767f049f-3484-4323-8369-f47b22ec298c
+Using generated security password: 08c4c6f7-0143-4c9a-a855-9dcd0b02d688
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2024-01-07T14:44:49.664+01:00  INFO 9789 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@79b24f79, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39088acb, org.springframework.security.web.context.SecurityContextHolderFilter@7a9794bd, org.springframework.security.web.header.HeaderWriterFilter@6aa09c35, org.springframework.security.web.authentication.logout.LogoutFilter@82134e4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@78b5c29f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@297727ab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47585784, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70dd4172, org.springframework.security.web.session.SessionManagementFilter@22457838, org.springframework.security.web.access.ExceptionTranslationFilter@390d47db, org.springframework.security.web.access.intercept.AuthorizationFilter@1d9a80d8]
-2024-01-07T14:44:49.697+01:00  INFO 9789 --- [    Test worker] c.e.s.ControllerTest.UserControllerTest  : Started UserControllerTest in 0.423 seconds (process running for 7.71)
-2024-01-07T14:44:49.698+01:00  INFO 9789 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
->>>>>>> 43e7e0ec78c5acca5465a905c7d0915a6e65dab5
+2024-02-13T00:15:27.050+01:00  INFO 29751 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3200f6e5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1703b09a, org.springframework.security.web.context.SecurityContextHolderFilter@44bd4b94, org.springframework.security.web.header.HeaderWriterFilter@18fb5226, org.springframework.security.web.authentication.logout.LogoutFilter@6671ec3b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5bf9c995, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1bcb2501, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59632e3c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64476bb5, org.springframework.security.web.session.SessionManagementFilter@403a2ed5, org.springframework.security.web.access.ExceptionTranslationFilter@4613274d, org.springframework.security.web.access.intercept.AuthorizationFilter@6402f6b1]
+2024-02-13T00:15:27.097+01:00  INFO 29751 --- [    Test worker] c.e.s.ControllerTest.UserControllerTest  : Started UserControllerTest in 0.623 seconds (process running for 7.857)
+2024-02-13T00:15:27.099+01:00  INFO 29751 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
 </pre>
 </span>
 </div>
@@ -189,11 +142,7 @@ This generated password is for development use only. Your security configuration
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<<<<<<< HEAD
-<a href="http://www.gradle.org">Gradle 8.2.1</a> at Jan 13, 2024, 5:12:29 PM</p>
-=======
-<a href="http://www.gradle.org">Gradle 8.2.1</a> at Jan 7, 2024, 2:44:52 PM</p>
->>>>>>> 43e7e0ec78c5acca5465a905c7d0915a6e65dab5
+<a href="http://www.gradle.org">Gradle 8.2.1</a> at Feb 13, 2024, 12:15:31 AM</p>
 </div>
 </div>
 </body>

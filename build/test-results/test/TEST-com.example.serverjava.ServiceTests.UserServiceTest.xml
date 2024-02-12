@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="com.example.serverjava.ServiceTests.UserServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-13T16:12:29" hostname="DESKTOP-D5705G5" time="0.008">
+<testsuite name="com.example.serverjava.ServiceTests.UserServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-12T23:15:30" hostname="DESKTOP-D5705G5" time="0.007">
   <properties/>
   <testcase name="testGetUserByEmail()" classname="com.example.serverjava.ServiceTests.UserServiceTest" time="0.004"/>
   <testcase name="testGetUserById()" classname="com.example.serverjava.ServiceTests.UserServiceTest" time="0.003"/>
-  <system-out><![CDATA[2024-01-13T17:12:28.118+01:00  INFO 3400 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ServiceTests.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-13T17:12:28.119+01:00  INFO 3400 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ServiceTests.UserServiceTest
-=======
-<testsuite name="com.example.serverjava.ServiceTests.UserServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-07T13:44:52" hostname="bar-Latitude-3420" time="0.006">
-  <properties/>
-  <testcase name="testGetUserByEmail()" classname="com.example.serverjava.ServiceTests.UserServiceTest" time="0.003"/>
-  <testcase name="testGetUserById()" classname="com.example.serverjava.ServiceTests.UserServiceTest" time="0.002"/>
-  <system-out><![CDATA[2024-01-07T14:44:51.545+01:00  INFO 9789 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ServiceTests.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-07T14:44:51.546+01:00  INFO 9789 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ServiceTests.UserServiceTest
->>>>>>> 43e7e0ec78c5acca5465a905c7d0915a6e65dab5
+  <system-out><![CDATA[2024-02-13T00:15:30.273+01:00  INFO 29751 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.serverjava.ServiceTests.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-02-13T00:15:30.274+01:00  INFO 29751 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.serverjava.ServerJavaApplication for test class com.example.serverjava.ServiceTests.UserServiceTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -23,59 +14,31 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-<<<<<<< HEAD
-2024-01-13T17:12:28.134+01:00  INFO 3400 --- [    Test worker] c.e.s.ServiceTests.UserServiceTest       : Starting UserServiceTest using Java 17.0.9 with PID 3400 (started by bareldan in /home/bareldan/FIT/java-server)
-2024-01-13T17:12:28.135+01:00  INFO 3400 --- [    Test worker] c.e.s.ServiceTests.UserServiceTest       : No active profile set, falling back to 1 default profile: "default"
-2024-01-13T17:12:28.238+01:00  INFO 3400 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-13T17:12:28.245+01:00  INFO 3400 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
-2024-01-13T17:12:28.311+01:00  INFO 3400 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-13T17:12:28.316+01:00  INFO 3400 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-13T17:12:28.316+01:00  INFO 3400 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-13T17:12:28.317+01:00  INFO 3400 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
-2024-01-13T17:12:28.318+01:00  INFO 3400 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection conn71: url=jdbc:h2:mem:testdb user=SA
-2024-01-13T17:12:28.318+01:00  INFO 3400 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
-2024-01-13T17:12:28.341+01:00  INFO 3400 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-13T17:12:28.379+01:00  INFO 3400 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-13T17:12:28.392+01:00  INFO 3400 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-13T17:12:28.468+01:00  WARN 3400 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-13T17:12:28.527+01:00  WARN 3400 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+2024-02-13T00:15:30.295+01:00  INFO 29751 --- [    Test worker] c.e.s.ServiceTests.UserServiceTest       : Starting UserServiceTest using Java 17.0.9 with PID 29751 (started by bareldan in /home/bareldan/FOODURA)
+2024-02-13T00:15:30.295+01:00  INFO 29751 --- [    Test worker] c.e.s.ServiceTests.UserServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2024-02-13T00:15:30.372+01:00  INFO 29751 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-13T00:15:30.380+01:00  INFO 29751 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
+2024-02-13T00:15:30.445+01:00  INFO 29751 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-13T00:15:30.450+01:00  INFO 29751 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-02-13T00:15:30.450+01:00  INFO 29751 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-13T00:15:30.450+01:00  INFO 29751 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2024-02-13T00:15:30.452+01:00  INFO 29751 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection conn71: url=jdbc:h2:mem:testdb user=SA
+2024-02-13T00:15:30.452+01:00  INFO 29751 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2024-02-13T00:15:30.468+01:00  INFO 29751 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-02-13T00:15:30.501+01:00  INFO 29751 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-02-13T00:15:30.515+01:00  INFO 29751 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-13T00:15:30.584+01:00  WARN 29751 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-13T00:15:30.623+01:00  WARN 29751 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 971b2135-460d-408f-8797-6ec77b3e2c9c
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2024-01-13T17:12:28.535+01:00  INFO 3400 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@48684169, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@247b411d, org.springframework.security.web.context.SecurityContextHolderFilter@55aa7cc0, org.springframework.security.web.header.HeaderWriterFilter@6d2ea1bc, org.springframework.security.web.authentication.logout.LogoutFilter@5c2424a0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3514624f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6111aa49, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79aac496, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@688e6e6c, org.springframework.security.web.session.SessionManagementFilter@4a3d2b51, org.springframework.security.web.access.ExceptionTranslationFilter@15d42b6f, org.springframework.security.web.access.intercept.AuthorizationFilter@1faa627c]
-2024-01-13T17:12:28.591+01:00  INFO 3400 --- [    Test worker] c.e.s.ServiceTests.UserServiceTest       : Started UserServiceTest in 0.468 seconds (process running for 15.179)
-2024-01-13T17:12:28.592+01:00  INFO 3400 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
-2024-01-13T17:12:29.024+01:00  INFO 3400 --- [    Test worker] c.e.serverjava.Service.UserService       : Find user with email : null
-2024-01-13T17:12:29.028+01:00  INFO 3400 --- [    Test worker] c.e.serverjava.Service.UserService       : Find user with id: 1
-=======
-2024-01-07T14:44:51.556+01:00  INFO 9789 --- [    Test worker] c.e.s.ServiceTests.UserServiceTest       : Starting UserServiceTest using Java 17.0.9 with PID 9789 (started by bar in /home/bar/FIT/java-server)
-2024-01-07T14:44:51.556+01:00  INFO 9789 --- [    Test worker] c.e.s.ServiceTests.UserServiceTest       : No active profile set, falling back to 1 default profile: "default"
-2024-01-07T14:44:51.623+01:00  INFO 9789 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-07T14:44:51.630+01:00  INFO 9789 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
-2024-01-07T14:44:51.669+01:00  INFO 9789 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-07T14:44:51.671+01:00  INFO 9789 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-07T14:44:51.671+01:00  INFO 9789 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-07T14:44:51.672+01:00  INFO 9789 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
-2024-01-07T14:44:51.672+01:00  INFO 9789 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection conn71: url=jdbc:h2:mem:testdb user=SA
-2024-01-07T14:44:51.672+01:00  INFO 9789 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
-2024-01-07T14:44:51.688+01:00  INFO 9789 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-01-07T14:44:51.710+01:00  INFO 9789 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-07T14:44:51.718+01:00  INFO 9789 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-07T14:44:51.773+01:00  WARN 9789 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-07T14:44:51.807+01:00  WARN 9789 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: bbea956c-a661-4fa3-b93e-540c6215c414
+Using generated security password: 549546ad-3615-4209-a04f-1947e4ab034a
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2024-01-07T14:44:51.813+01:00  INFO 9789 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@79aac496, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a6e1f51, org.springframework.security.web.context.SecurityContextHolderFilter@74918273, org.springframework.security.web.header.HeaderWriterFilter@12f2f402, org.springframework.security.web.authentication.logout.LogoutFilter@6d2ea1bc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6111aa49, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c6f7b6b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5938d600, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c2424a0, org.springframework.security.web.session.SessionManagementFilter@4d10360e, org.springframework.security.web.access.ExceptionTranslationFilter@779be9bb, org.springframework.security.web.access.intercept.AuthorizationFilter@55aa7cc0]
-2024-01-07T14:44:51.857+01:00  INFO 9789 --- [    Test worker] c.e.s.ServiceTests.UserServiceTest       : Started UserServiceTest in 0.309 seconds (process running for 9.869)
-2024-01-07T14:44:51.858+01:00  INFO 9789 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
-2024-01-07T14:44:52.176+01:00  INFO 9789 --- [    Test worker] c.e.serverjava.Service.UserService       : Find user with email : null
-2024-01-07T14:44:52.179+01:00  INFO 9789 --- [    Test worker] c.e.serverjava.Service.UserService       : Find user with id: 1
->>>>>>> 43e7e0ec78c5acca5465a905c7d0915a6e65dab5
+2024-02-13T00:15:30.630+01:00  INFO 29751 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@308b8e8f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1faa627c, org.springframework.security.web.context.SecurityContextHolderFilter@15d42b6f, org.springframework.security.web.header.HeaderWriterFilter@5c6f7b6b, org.springframework.security.web.authentication.logout.LogoutFilter@6111aa49, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5c2424a0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d2ea1bc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a3d2b51, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3514624f, org.springframework.security.web.session.SessionManagementFilter@5938d600, org.springframework.security.web.access.ExceptionTranslationFilter@74918273, org.springframework.security.web.access.intercept.AuthorizationFilter@5a6e1f51]
+2024-02-13T00:15:30.677+01:00  INFO 29751 --- [    Test worker] c.e.s.ServiceTests.UserServiceTest       : Started UserServiceTest in 0.399 seconds (process running for 11.436)
+2024-02-13T00:15:30.678+01:00  INFO 29751 --- [    Test worker] c.example.serverjava.Config.AdminConfig  : Creating admin
+2024-02-13T00:15:30.978+01:00  INFO 29751 --- [    Test worker] c.e.serverjava.Service.UserService       : Find user with email : null
+2024-02-13T00:15:30.982+01:00  INFO 29751 --- [    Test worker] c.e.serverjava.Service.UserService       : Find user with id: 1
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
